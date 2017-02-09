@@ -6,3 +6,4 @@
 //@prepros-append ../js/modal.js
 //@prepros-append ../js/tab.js
 //@prepros-append ../js/function.js
+//@prepros-append ../js/validate.js

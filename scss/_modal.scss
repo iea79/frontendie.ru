@@ -70,12 +70,12 @@
         background-color: #fff;
         border: 1px solid #999;
         border: 1px solid rgba(0,0,0,.2);
-        @include border-radius(6px);
-        @include box-shadow(0 3px 9px rgba(0,0,0,.5));
         background-clip: padding-box;
         outline: 0;
-        margin: 30px auto;
-        max-width: 600px;
+        margin: 31px auto;
+        max-width: 900px;
+        @include border-radius(6px);
+        @include box-shadow(0 3px 9px rgba(0,0,0,.5));
         @extend %clear_a;
     }
 
@@ -104,6 +104,7 @@
         color: #666;
         font-size: 18px;
         border-bottom: 1px solid #e5e5e5;
+        @extend %clear_a;
         .close {
             margin-top: -2px;
         }
@@ -118,6 +119,7 @@
         position: relative;
         padding: 0;
         padding: 15px;
+        @extend %clear_a;
     }
 
     &-footer {
@@ -125,6 +127,7 @@
         padding: 19px 20px;
         text-align: right;
         border-top: 1px solid #e5e5e5;
+        @extend %clear_a;
         .btn+.btn {
             margin-left: 5px;
             margin-bottom: 0;

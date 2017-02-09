@@ -4,9 +4,9 @@
 	<meta charset="utf-8" />
 	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<title>Профессиональная верстка сайтов - Евгений Иванов</title>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="верстка сайта, html верстка, адаптивная верстка, резиновая верстка, bitrix верстка, symfony верстка, Jade верстка, HTML, HTML5, css, scss, sass, compass, jQuery, javascript, js, frontend, ssi верстка, bootstrap, uikit" />
+	<meta name="description" content="Профессиональная верстка сайтов любой сложности" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 
 	<link href="css/slick.css" rel="stylesheet" type="text/css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -413,43 +413,43 @@
 				</div>
 				<div class="grid__wrapper">
 					<div class="grid_pricing_item grid_pricing_item_form">
-						<!-- Start form_ -->
 						<form class="form" id="" action="/">
+							<input type="hidden" name="subject" value="Заявка из блока Цены">
 							<legend class="form__legend">Заполните форму и я расчитаю стоимость работы именно для Вышего сайта</legend>
-							<!-- begin grid  -->
 							<div class="grid grid__2 ">
 								<div class="grid__wrapper">
 									<div class="grid__item">
-										<input class="form__input" type="text" id="#" placeholder="Имя">
+										<input class="form__input name_field rf" name="name" type="text" id="#" placeholder="Имя*">
 									</div>
 								</div>
 								<div class="grid__wrapper">
 									<div class="grid__item">
-										<input class="form__input" type="text" id="#" placeholder="Телефон">
+										<input class="form__input" type="text" name="phone" id="#" placeholder="Телефон">
 									</div>
 								</div>
 								<div class="grid__wrapper">
 									<div class="grid__item">
-										<input class="form__input" type="text" id="#" placeholder="E-mail">
+										<input class="form__input email_field rf" name="email" type="text" id="#" placeholder="E-mail*">
 									</div>
 								</div>
 								<div class="grid__wrapper">
 									<div class="grid__item file_upload">
 										<button type="button" class="btn">Выбрать</button>
 										<div class="file_upload_rezult">Файл не выбран</div>
-										<input class="form__input" type="file" id="#">
+										<input class="form__input" name="file" type="file" id="#">
 									</div>
 								</div>
 							</div>
-							<!-- end grid  -->
 							<div class="form__row">
-								<textarea placeholder="Сообщение"></textarea>
+								<textarea placeholder="Сообщение" name="message"></textarea>
 							</div>
 							<div class="form__row">
-								<button class="btn btn__primary">Отправить</button>
+								<div class="rezult"></div>
+							</div>
+							<div class="form__row">
+								<button type="submit" class="btn btn__primary">Отправить</button>
 							</div>
 						</form>
-						<!-- End form_ -->
 					</div>
 				</div>
 			</div>
@@ -503,15 +503,50 @@
 <div class="modal fade modal_callback" id="modal_callback">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<a href="#" class="modal-close" data-dismiss="modal"></a>
-			<div class="modal-header">
-				<div class="modal-title" id="myModalLabel">Название модали</div>
-			</div>
-			<div class="modal-body">
-				
-			</div>
-			<div class="modal-footer">
-			</div>
+			<form class="form" id="" action="/">
+				<input type="hidden" name="subject" value="Заявка из модали">
+				<a href="#" class="modal-close" data-dismiss="modal"></a>
+				<div class="modal-header">
+					<div class="modal-title" id="myModalLabel">Заполните форму и я расчитаю стоимость работы именно для Вышего сайта</div>
+				</div>
+				<div class="modal-body">
+					<div class="grid_pricing grid_pricing_item_form">
+						<div class="grid grid__2 ">
+							<div class="grid__wrapper">
+								<div class="grid__item">
+									<input class="form__input name_field rf" name="name" type="text" id="#" placeholder="Имя*">
+								</div>
+							</div>
+							<div class="grid__wrapper">
+								<div class="grid__item">
+									<input class="form__input" type="text" name="phone" id="#" placeholder="Телефон">
+								</div>
+							</div>
+							<div class="grid__wrapper">
+								<div class="grid__item">
+									<input class="form__input email_field rf" name="email" type="text" id="#" placeholder="E-mail*">
+								</div>
+							</div>
+							<div class="grid__wrapper">
+								<div class="grid__item file_upload">
+									<button type="button" class="btn">Выбрать</button>
+									<div class="file_upload_rezult">Файл не выбран</div>
+									<input class="form__input" name="file" type="file" id="#">
+								</div>
+							</div>
+						</div>
+						<div class="form__row">
+							<textarea placeholder="Сообщение" name="message"></textarea>
+						</div>
+						<div class="form__row">
+							<div class="rezult"></div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn__primary">Отправить</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

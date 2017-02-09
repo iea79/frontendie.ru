@@ -735,6 +735,29 @@ input[type=checkbox]:disabled:indeterminate:before {
 		}
 	}
 }
+.modal {
+	.grid_pricing_item_form {
+		margin: 0;
+		padding: 10px;
+	}
+	.btn__primary {
+		position: relative;
+		padding: 12px 15px 13px 50px;
+		&:before {
+			content: image-url('plain.png');
+			position: absolute;
+			left: 13px;
+			top: 10px;
+		}
+	}
+}
+.errore_tooltip {
+	position: absolute;
+	color: #f00;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: 15px;
+}
 
 // About ----------------------------------------------------------------------
 .about {
@@ -895,7 +918,6 @@ input[type=checkbox]:disabled:indeterminate:before {
 }
 // Portfolio -------------------------------------------------------------------
 .portfolio {
-	
 	.container_center {
 		padding: 2% 15px;
 	}
@@ -1202,10 +1224,10 @@ input[type=checkbox]:disabled:indeterminate:before {
 		left: 50%;
 		margin-left: -75px;
 		&:before {
-			content: image-url('mail.png');
+			content: image-url('plain.png');
 			position: absolute;
-			left: 17px;
-			top: 13px;
+			left: 13px;
+			top: 10px;
 		}
 	}
 	.form {
@@ -1214,6 +1236,9 @@ input[type=checkbox]:disabled:indeterminate:before {
 		}
 		&__input {
 			width: 100%;
+			&.error {
+				border-bottom-color: #f00;
+			}
 		}
 	}
 	.form__row {
@@ -1222,6 +1247,17 @@ input[type=checkbox]:disabled:indeterminate:before {
 	textarea {
 		width: 100%;
 		margin-bottom: 10px;
+	}
+}
+
+.rezult {
+	.error {
+		color: #f000;
+	}
+	.success {
+		color: #1a83cd;
+		font-size: 16px;
+		font-weight: 600;
 	}
 }
 
