@@ -10,13 +10,14 @@
 
 	<link href="css/slick.css" rel="stylesheet" type="text/css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
-
-	<script type="text/javascript" src="js/jquery.js"></script>
+	
+	<script type="text/javascript" src="app/app-dist.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.circliful.min.js"></script>
 	<script type="text/javascript" src="js/jquery.viewportchecker.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/typed.js"></script>
-	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/function.js"></script> -->
 
 </head>
 
@@ -58,7 +59,7 @@
 		
 			<div class="first_screen_wrapper">
 				<h1 class="first_screen_title">Профессиональная <br>верстка сайтов</h1>
-				<button class="btn first_screen_btn">Заказать</button>
+				<button class="btn first_screen_btn" data-toggle="modal" data-target="#modal_callback">Заказать</button>
 			</div>
 			
 		</div>
@@ -81,8 +82,11 @@
 					</div>
 					<div class="grid__wrapper">
 						<div class="grid__item">
-							<img src="img/photo.jpg" alt=""/>
-							<!-- <img src="img/iea2.png" alt=""/> -->
+							<!-- <img src="img/photo.jpg" alt=""/> -->
+							<div class="my_photo">
+								<img src="img/iea2.png" alt=""/>
+							</div>
+							<!-- <img src="img/iea.jpg" alt=""/> -->
 						</div>
 					</div>
 				</div>
@@ -222,7 +226,10 @@
 						<img src="img/screenshot-1.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit asperiores ad ullam magni quos blanditiis animi molestias laborum et, temporibus!
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -233,7 +240,10 @@
 						<img src="img/screenshot-2.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam culpa fugiat quisquam enim saepe eaque sunt mollitia laudantium cupiditate adipisci.
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -244,7 +254,10 @@
 						<img src="img/screenshot-3.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias explicabo assumenda voluptatum placeat cumque accusantium aliquid tenetur eveniet quis, sapiente?
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -255,7 +268,10 @@
 						<img src="img/screenshot-4.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic fugiat consectetur maiores ducimus maxime, odit placeat dicta saepe natus harum!
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -266,7 +282,10 @@
 						<img src="img/screenshot-5.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur iste veritatis sed eius, natus alias quisquam qui placeat ut ullam.
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -277,7 +296,10 @@
 						<img src="img/screenshot-6.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim iste pariatur, excepturi est quas minus esse explicabo aspernatur nobis magni.
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -288,7 +310,10 @@
 						<img src="img/screenshot-7.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid dolor ipsa sequi alias hic temporibus eos quod praesentium quis!
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -299,7 +324,10 @@
 						<img src="img/screenshot-8.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem labore inventore veniam alias saepe voluptatem facere nihil pariatur natus, assumenda?
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -310,7 +338,10 @@
 						<img src="img/screenshot-9.jpg" alt=""/>
 						<div class="portfolio_overlay">
 							<div class="portfolio_overlay_title">
-								Lorem ipsum dolor sit amet, consectetur.							
+								Lorem ipsum dolor.							
+							</div>
+							<div class="portfolio_overlay_text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quia provident delectus perferendis reprehenderit at maxime unde quos. Quibusdam, quam.
 							</div>
 							<a href="#" class="portfolio_overlay_link">Перейти на сайт</a>
 						</div>
@@ -335,12 +366,12 @@
 				<div class="review_slider_item">
 					<p>Отличная верстка, исполнитель всегда был на связи и оперативно вносил правки. Вот чего не хватает большему количеству фрилансеров!</p>
 					<p>Спасибо, надеюсь продолжить сотрудничество</p>
-					<p class="review_slider_name"><a href="https://www.fl.ru/users/spacestudio/">Людмила Шап</a></p>
+					<p class="review_slider_name"><a href="https://www.fl.ru/users/spacestudio/" target="blank">Людмила Шап</a></p>
 				</div>
 				<div class="review_slider_item">
 					<p>Все изменения на сайте что оговорены – сделаны. Прислушался к ошибкам которые сделали на корявом дизайне и исправил.</p>
 					<p>Чуткий и ответственный. Сверсать – к нему!</p>
-					<p class="review_slider_name"><a href="https://www.fl.ru/users/AzikLik">Балжи Михаил</a></p>
+					<p class="review_slider_name"><a href="https://www.fl.ru/users/AzikLik" target="blank">Балжи Михаил</a></p>
 				</div>
 				<div class="review_slider_item">
 					<p>Спасибо Евгению за его кропотливый труд и терпение! Евгений, Вы – большой молодец. Буду обращаться с более серьезными проектами еще.</p>
@@ -358,6 +389,71 @@
 		<div class="container_center">
 		
 			<h3 class="section_title">Цены</h3>
+
+			<!-- begin grid grid_pricing -->
+			<div class="grid grid_pricing">
+				<div class="grid__wrapper grid_pricing_first">
+					<div class="grid_pricing_item">
+						<div class="grid_pricing_title">12 $</div>
+						<div class="grid_pricing_description">
+							Стоимость часа работы
+						</div>
+					</div>
+					<div class="grid_pricing_item">
+						<div class="grid_pricing_title">1500 $</div>
+						<div class="grid_pricing_description">
+							Стоимость месяца работы (40 часов в неделю)
+						</div>
+					</div>
+
+					<div class="grid_pricing_attention">
+						*За правки и доработку "чужого" кода наценка 30%
+					</div>
+
+				</div>
+				<div class="grid__wrapper">
+					<div class="grid_pricing_item grid_pricing_item_form">
+						<!-- Start form_ -->
+						<form class="form" id="" action="/">
+							<legend class="form__legend">Заполните форму и я расчитаю стоимость работы именно для Вышего сайта</legend>
+							<!-- begin grid  -->
+							<div class="grid grid__2 ">
+								<div class="grid__wrapper">
+									<div class="grid__item">
+										<input class="form__input" type="text" id="#" placeholder="Имя">
+									</div>
+								</div>
+								<div class="grid__wrapper">
+									<div class="grid__item">
+										<input class="form__input" type="text" id="#" placeholder="Телефон">
+									</div>
+								</div>
+								<div class="grid__wrapper">
+									<div class="grid__item">
+										<input class="form__input" type="text" id="#" placeholder="E-mail">
+									</div>
+								</div>
+								<div class="grid__wrapper">
+									<div class="grid__item file_upload">
+										<button type="button" class="btn">Выбрать</button>
+										<div class="file_upload_rezult">Файл не выбран</div>
+										<input class="form__input" type="file" id="#">
+									</div>
+								</div>
+							</div>
+							<!-- end grid  -->
+							<div class="form__row">
+								<textarea placeholder="Сообщение"></textarea>
+							</div>
+							<div class="form__row">
+								<button class="btn btn__primary">Отправить</button>
+							</div>
+						</form>
+						<!-- End form_ -->
+					</div>
+				</div>
+			</div>
+			<!-- end grid grid_pricing -->
 			
 		</div>
 	</section>
@@ -402,6 +498,25 @@
 
 </footer>
 <!-- end footer -->
+
+<!-- begin Modal modal_callback -->
+<div class="modal fade modal_callback" id="modal_callback">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<a href="#" class="modal-close" data-dismiss="modal"></a>
+			<div class="modal-header">
+				<div class="modal-title" id="myModalLabel">Название модали</div>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end Modal modal_callback -->
+
 
 <audio id="audio" src="audio/klava.mp3"></audio>
 

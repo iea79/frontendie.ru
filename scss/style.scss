@@ -61,7 +61,7 @@ $main_font_family:								Open Sans, sans-serif;
 // 	}
 // }
 $el-bg-colors: (
-	primary: #000000, // color for .element__primary
+	primary: #1a83cd, // color for .element__primary
 	success: #27BA6C, // color for .element__success
 	info: #03a9f4, // color for .element__info
 	warning: #FF8833, // color for .element__warning
@@ -131,12 +131,37 @@ $btn_contrast_text_color:                        #fff;
 
 // Placeholder for input
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+	&::-webkit-input-placeholder {@content};
+	&:-moz-placeholder           {@content};
+	&::-moz-placeholder          {@content};
+	&:-ms-input-placeholder      {@content};
 }
 
+%line {
+	display: inline-block;
+	&:after {
+		content: '';
+		display: block;
+		width: 0;
+		border-top: 1px solid;
+		margin-top: 1px;
+		margin-left: 50%;
+		position: relative;
+		@include trs(.3s);
+	}
+	&:hover {
+		text-decoration: none;
+		&:after {
+			content: '';
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+}
+
+
+@import "modal";
+@import "tabs";
 
 // End @mixin and variables
 
@@ -276,21 +301,20 @@ input[type=number],
 input[type=datetime], 
 textarea {
 	background-color: white;
-	border: 1px solid #ccc;
 	padding: 6px 15px;
 	outline: none;
 	font-size: 16px;
 	font-weight: 300;
 	font-family: $main_font_family;
-	@include border-radius(5px);
 	@include trs(0.3s);
+	border: none;
+	border-bottom: 1px solid #ccc;
 	&:hover {
 	}
 	&:focus {
-		border: 1px solid #bebebe;
-		background-color: #f6f6f6;
 		@include placeholder {
 			color: red;
+			text-indent: -300px;
 		}
 	}
 	&.input_error {
@@ -299,8 +323,14 @@ textarea {
 	}
 	// Placeholder for input +++++++++++++++
 	@include placeholder {
+		@include trs(.3s);
 		color: #b3b3b3;
+		text-indent: 0;
 	}
+}
+
+textarea {
+	min-height: 100px;
 }
 
 input[type=search]::-webkit-search-cancel-button,
@@ -395,6 +425,55 @@ input[type=checkbox]:disabled:indeterminate:before {
 	color: red;
 }
 
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex:  $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin flex-order($val) {
+	-webkit-order: $val;  
+	order: $val;
+}
+
+// 
+// @TODO: Add docs to flex-flow!
+// flex-flow: flex-direction flex-wrap|initial|inherit;
+//
+@mixin flex-flow($params) {
+    -webkit-flex-flow: $params; /* Safari 6.1+ */
+    flex-flow: $params;
+}
+
+// 
+// @TODO: Add docs to justify-content!
+// justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;
+// 
+@mixin justify-content($params) {
+    -webkit-justify-content: $params; /* Safari 6.1+ */
+    justify-content: $params;
+}
+
+// 
+// @TODO: Add docs to     -webkit-align-content!
+//
+@mixin align-content($params) {
+    -webkit-align-content: $params;
+    align-content: $params;
+}
+
+// End @mixin and variables
+
 // Grid
 // ------------------------
 // Example - for html
@@ -412,37 +491,46 @@ input[type=checkbox]:disabled:indeterminate:before {
 // ------------------------
 .grid {
 	margin-left: -$grid_padding;
-	@extend %clear_all;
+	// @include flexbox();
+	// @include flex-flow(row wrap);
+	@extend %clear_a;
 	&__wrapper {
-		float: left;
 		padding-left: $grid_padding;
+		padding-bottom: $grid_padding;
+		// @include flex(1 0 auto);
+		float: left;
 	}
 	&__item {
 
 	}
 	&__1 {
-		.grid__wrapper {		
-			width: 100%;
+		.grid__wrapper {
+			width: 100%;	
+			// @include flex(1 0 100%);
 		}
 	}
 	&__2 {
-		.grid__wrapper {		
-			width: 50%;
+		.grid__wrapper {
+			width: 50%;		
+			// @include flex(1 0 50%);
 		}
 	}
 	&__3 {
-		.grid__wrapper {		
-			width: 33.333%;
+		.grid__wrapper {
+			width: 33.333%;		
+			// @include flex(1 0 33%);
 		}
 	}
 	&__4 {
-		.grid__wrapper {		
-			width: 25%;
+		.grid__wrapper {
+			width: 25%;	
+			// @include flex(1 0 25%);
 		}
 	}
 	&__5 {
-		.grid__wrapper {		
-			width: 20%;
+		.grid__wrapper {
+			width: 20%;		
+			// @include flex(1 0 20%);
 		}
 	}
 }
@@ -462,7 +550,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	text-align: center;
 	max-width: 100%;
 	cursor: pointer;
-	@include border-radius(5px);
+	@include border-radius(30px);
 	@include trs(0.3s);
 	&:hover {
 		background-color: $el_default_bg_color_hover;
@@ -553,6 +641,8 @@ input[type=checkbox]:disabled:indeterminate:before {
 		font-size: 13px;
 		font-weight: 300;
 		text-transform: uppercase;
+		@include trs(.5s);
+		@extend %line;
 	}
 }
 
@@ -685,6 +775,31 @@ input[type=checkbox]:disabled:indeterminate:before {
 		line-height: 1.5;
 	}
 }
+.my_photo {
+	display: inline-block;
+	@include border-radius(50%);
+	background-color: #1a83cd;
+	position: relative;
+	margin: 4px;
+	padding: 20px;
+	&:before {
+		content: '';
+		border: 2px dotted #b3b3b3;
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		bottom: -5px;
+		left: -5px;
+		@include border-radius(50%);
+	}
+	img {
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
 
 .typed-cursor{
     opacity: 1;
@@ -713,7 +828,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 		margin-left: 0;
 		overflow: hidden;
 		text-align: center;
-		@include trs(0.8s);
+		@include trs(.5s);
 		&.open {
 			height: auto;
 			.grid__wrapper {
@@ -734,8 +849,8 @@ input[type=checkbox]:disabled:indeterminate:before {
 				display: block;
 				position: absolute;
 				width: 76%;
-				height: 77.2%;
-				top: 13.8%;
+				height: 70.200000000000003%;
+				top: 12.199999999999999%;
 				left: 13%;
 				border: 2px dotted #b3b3b3;
 				@include border-radius(50%);
@@ -793,23 +908,42 @@ input[type=checkbox]:disabled:indeterminate:before {
 			padding: 6px 36px;
 			display: inline-block;
 			margin-right: 7px;
+			position: relative;
+			overflow: hidden;
 			@include trs(.3s);
 			@include border-radius(17px);
-			&:hover,&.active {
+			&:after {
+				content: '';
+				@include trs(.5s);
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				z-index: -1;
 				background-color: #20a3ff;
+			}
+			&:hover,&.active {
+				// background-color: #20a3ff;
 				border-color: #20a3ff;
 				color: white;
 				text-decoration: none;
 				@include border-radius(17px);
+				&:after {
+					width: 100%;
+				}
 			}
 		}
 	}
 	&_grid {
 		.grid__wrapper {
 			position: relative;
-			margin-bottom: 30px;
+			padding-bottom: 30px;
 			overflow: hidden;
-			@include trs(1s);
+			@include trs(.5s);
+			&.hidden {
+				display: none;
+			}
 		}
 		.grid__item {
 			position: relative;
@@ -822,6 +956,25 @@ input[type=checkbox]:disabled:indeterminate:before {
 					top: 0;
 					left: 0;
 					opacity: 1;
+					width: 100%;
+					height: 100%;
+					padding: 11% 12%;
+					&_title {
+						color: white;
+						font-size: 30px;
+						line-height: 34px;
+					}
+					&_link {
+						font-size: 16px;
+						&:before {
+							content: image-url('port_link.png');
+							width: 35px;
+							height: 35px;
+						}
+					}
+					&_text {
+						font-size: 14px;
+					}
 				}
 				img {
 					opacity: .8;
@@ -838,40 +991,47 @@ input[type=checkbox]:disabled:indeterminate:before {
 		}
 	}
 	&_overlay {
-		top: 100%;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		padding: 11% 12%;
+		top: 50%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		padding: 5;
 		background-color: rgba(32, 163, 255, 0.9);
 		opacity: 0;
-		@include trs(.8s);
-	}
-	&_overlay_title {
-		color: white;
-		font-size: 30px;
-		line-height: 34px;
-	}
-	&_overlay_link {
-		display: block;
-		color: white;
-		font-size: 16px;
-		font-weight: 700;
-		margin-top: 16px;
-		&:before {
-			content: image-url('port_link.png');
-			width: 35px;
-			height: 35px;
-			display: inline-block;
-			vertical-align: middle;
-			margin-right:8px;
-			@include trs(.3s);
+		@include trs(.5s);
+		overflow: hidden;
+		&_title {
+			color: white;
+			font-size: 0px;
+			margin-bottom: 5px;
+			@include trs(.5s);
 		}
-		&:hover {
-			text-decoration: none;
+		&_link {
+			display: block;
+			color: white;
+			font-size: 0;
+			font-weight: 700;
+			margin-top: 16px;
 			&:before {
-				@include transform(rotate(90deg));
+				content: image-url('port_link.png');
+				width: 0;
+				height: 0;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right:8px;
+				@include trs(.5s);
 			}
+			&:hover {
+				text-decoration: none;
+				&:before {
+					@include transform(rotate(90deg));
+				}
+			}
+		}
+		&_text {
+			font-size: 0;
+			color: #fff;
+			@include trs(.5s);
 		}
 	}
 	&_more_btn {
@@ -975,6 +1135,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 		font-weight: 700;
 		a {
 			color: #fff;
+			@extend %line;
 		}
 	}
 	.slick-dots button {
@@ -988,6 +1149,113 @@ input[type=checkbox]:disabled:indeterminate:before {
 			background-color: #fff;
 			border-color: #fff;
 		}
+	}
+}
+
+// Pricing ---------------------------------------------------------------------
+.price {
+	.section_title {
+		margin-top: 60px;
+		margin-bottom: 40px;
+	}
+}
+.grid_pricing {
+	margin-top: 30px;
+	margin-left: -20px;
+	margin-bottom: 70px;
+	.grid {
+		margin-left: -20px;
+	}
+	.grid__wrapper {
+		padding-left: 20px;
+		// padding-bottom: 20px;
+	}
+	&_first {
+		max-width: 270px;
+	}
+	&_item {
+		border: 1px solid #ccc;
+		padding: 15px;
+		margin-bottom: 20px;
+	}
+	&_title {
+		color: #1a83cd;
+		font-weight: 600;
+		font-size: 50px;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	&_description {}
+	&_attention {
+		color: #1a83cd;
+	}
+	&_item_form {
+		max-width: 900px;
+		padding: 25px 40px;
+		position: relative;
+	}
+	.btn__primary {
+		bottom: -24px;
+		position: absolute;
+		padding: 12px 15px 13px 50px;
+		width: 150px;
+		left: 50%;
+		margin-left: -75px;
+		&:before {
+			content: image-url('mail.png');
+			position: absolute;
+			left: 17px;
+			top: 13px;
+		}
+	}
+	.form {
+		&__legend {
+			margin-bottom: 25px;
+		}
+		&__input {
+			width: 100%;
+		}
+	}
+	.form__row {
+		text-align: center;
+	}
+	textarea {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+.file_upload {
+	position: relative;
+	overflow: hidden;
+	@extend %clear_a;
+	&_rezult {
+		display: block;
+		overflow: hidden;
+		padding-top: 7px;
+	}
+	&_del {
+		vertical-align: middle;
+		display: inline-block;
+		&:before {
+			content: '✖';
+			vertical-align: middle;
+			margin: 0 9px;
+			color: #f00;
+			cursor: pointer;
+		}
+	}
+	button {
+		margin-right: 8px;
+		float: left;
+	}
+	input[type=file] {
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		height: 0%;
+		z-index: -1;
 	}
 }
 
@@ -1014,6 +1282,16 @@ input[type=checkbox]:disabled:indeterminate:before {
 			color: #fff;
 			font-size: 18px;
 			margin-right: 5%;
+			// @extend %line;
+			&:before {
+				@include trs(.5s);
+			}
+			&:hover {
+				text-decoration: none;
+				&:before {
+					@include transform(rotateY(180deg));				 	
+				}
+			}
 		}
 	}
 }
@@ -1034,65 +1312,6 @@ input[type=checkbox]:disabled:indeterminate:before {
 	}
 }
 
-
-// Breadcrumb ==================================================================
-.breadcrumb {
-	li {
-		display: inline-block;
-		vertical-align: baseline;
-		&:not(:first-child) {
-			&:before {
-				content: '/';
-				display: inline-block;
-			}
-		}
-		&:last-child {
-			a {
-				cursor: default;
-				text-decoration: none;
-			}
-		}
-		
-		a {
-			font-size: 12px;
-		}
-	}
-}
-
-// Pagination ==================================================================
-.pagination {
-	li {
-		display: inline-block;
-		a {
-			display: block;
-			text-align: center;
-		}
-		&.prev, &.next {
-			a {
-				&:before {					
-				}
-			}
-		}
-		&.prev {
-			a {
-				&:before {
-					content: '<';
-					
-				}
-			}
-		}
-		&.next {
-			a {
-				&:before {
-					content: '>';
-					
-				}
-			}
-		}
-	}
-}
-
-
 /* Footer
  ----------------------------------------------------------------------------- */
 .footer {
@@ -1105,6 +1324,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	@extend %clear_all;
 	a {
 		color: #fff;
+		@extend %line;
 	}
 	&_center {
 		text-align: center;

@@ -98,20 +98,20 @@ $(document).ready(function() {
     // $('#about .section_title').hide();
 
 
-	$('#about').viewportChecker({
-		// repeat: true,
-		callbackFunction: function () {
-		    $("html, body").animate({
-	    		scrollTop: $('#about').offset().top -49
-	    	}, 1000);
-		}
-	});
+	// $('#about').viewportChecker({
+	// 	// repeat: true,
+	// 	callbackFunction: function () {
+	// 	    $("html, body").animate({
+	//     		scrollTop: $('#about').offset().top -49
+	//     	}, 1000);
+	// 	}
+	// });
 
 	$('.about_title').viewportChecker({
 		callbackFunction: function () {
 			$('.about_title').typed({
 		        strings: ["^500 Здравствуйте!"],
-		        typeSpeed: 10,
+		        typeSpeed: 1,
 		        preStringTyped: function() {
 		        	audioPlay();
 		        },
@@ -121,8 +121,8 @@ $(document).ready(function() {
 		    });
 
 			$(".about_text span").typed({
-		        strings: ["^1500 Меня зовут Евгений, ^50 я профессиональный HTML-верстальщик. <br/>^50 Занимаюсь вёрсткой сайтов более 5 лет, <br/>^50  для меня это не просто хобби, а основной заработок и поэтому к работе отношусь серьезно и с большой ответственностью."],
-		        typeSpeed: 5,
+		        strings: ["^1500 Меня зовут Евгений, ^50 я профессиональный HTML-верстальщик. <br/>^50 Занимаюсь вёрсткой сайтов с 2010 года, <br/>^50  для меня это не просто хобби, а основной заработок и поэтому к работе отношусь серьезно и с большой ответственностью."],
+		        typeSpeed: 1,
 		        preStringTyped: function() {
 		        	audioPlay();
 		        },
@@ -158,21 +158,21 @@ $(document).ready(function() {
 					percent: 40,
 				});
 			}, 12000);
-			setTimeout(function() {
-			    $("html, body").animate({
-		    		scrollTop: $('#about .section_title').offset().top -49
-		    	}, 1000);
+			// setTimeout(function() {
+			//     $("html, body").animate({
+		 //    		scrollTop: $('#about .section_title').offset().top -49
+		 //    	}, 1000);
 
-			}, 14000);
+			// }, 14000);
 		}
 	});
 
 	$('.portfolio_grid').viewportChecker({
 		callbackFunction: function () {
 			$('.portfolio .grid__wrapper').removeClass('hidden');
-			console.log('removeClass hidden');
+			// console.log('removeClass hidden');
 			$(this).removeClass('visiblity');
-			console.log('removeClass visiblity');
+			// console.log('removeClass visiblity');
 		}
 	})
 
@@ -231,5 +231,29 @@ $(document).ready(function() {
 		document.getElementById('audio').pause();
 	}
 
+	filleUpload();
+
 });
 
+
+function filleUpload() {
+	$('.file_upload').on('click', 'button', function() {
+		$(this).parent().find('input[type=file]').trigger('click');
+	});
+
+	$('input[type=file]').on('change', function() {
+		var file_name = $(this).val().replace( "C:\\fakepath\\", '' );
+			rezult = $(this).parent().find('.file_upload_rezult');
+		if (! file_name.length) {
+			rezult.html('Выберите файл');
+		} else {
+			rezult.html(file_name+ "<span class='file_upload_del'></span>");
+		}
+	});
+
+	$('body').on('click', '.file_upload_del', function() {
+		$(this).closest('.file_upload').find('input[type=file]').val('');
+		$(this).closest('.file_upload').find('.file_upload_rezult').html('Выберите файл');
+		console.log('clear file');
+	});
+}
