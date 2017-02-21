@@ -95,18 +95,6 @@ $(document).ready(function() {
 	});
 
 	// Run plugins after scrioll to element 
-    // $('#about .section_title').hide();
-
-
-	// $('#about').viewportChecker({
-	// 	// repeat: true,
-	// 	callbackFunction: function () {
-	// 	    $("html, body").animate({
-	//     		scrollTop: $('#about').offset().top -49
-	//     	}, 1000);
-	// 	}
-	// });
-
 	$('.about_title').viewportChecker({
 		callbackFunction: function () {
 			$('.about_title').typed({
@@ -138,8 +126,7 @@ $(document).ready(function() {
 		callbackFunction: function () {
 			setTimeout(function() {
 				$('#about .section_title').addClass('open');
-			}, 11500);
-			setTimeout(function() {
+
 				$('.skills_grid').addClass('open');
 				// Circleful.js
 				$('#skill_html').circliful({
@@ -157,13 +144,7 @@ $(document).ready(function() {
 				$('#skill_js').circliful({
 					percent: 40,
 				});
-			}, 12000);
-			// setTimeout(function() {
-			//     $("html, body").animate({
-		 //    		scrollTop: $('#about .section_title').offset().top -49
-		 //    	}, 1000);
-
-			// }, 14000);
+			}, 11000);
 		}
 	});
 

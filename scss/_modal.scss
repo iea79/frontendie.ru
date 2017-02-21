@@ -20,7 +20,7 @@
         height: 26px;
         right: 16px;
         top: 13px;
-        color: #666;
+        color: #fff;
         cursor: pointer;
         @include trs(.7s);
         &:before,&:after {
@@ -101,7 +101,9 @@
     &-header {
         padding: 15px 45px 15px 15px;
         min-height: 16.42857143px;
-        color: #666;
+        background-color: #1a83cd;
+        color: #fff;
+        font-weight: 600;
         font-size: 18px;
         border-bottom: 1px solid #e5e5e5;
         @extend %clear_a;
@@ -126,6 +128,7 @@
         margin-top: 15px;
         padding: 19px 20px;
         text-align: right;
+        background-color: #e5e5e5;
         border-top: 1px solid #e5e5e5;
         @extend %clear_a;
         .btn+.btn {
