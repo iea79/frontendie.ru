@@ -1067,6 +1067,12 @@ input[type=checkbox]:disabled:indeterminate:before {
 			color: #fff;
 			@include trs(.5s);
 		}
+		&_hash {
+			color: #fff;
+			font-size: 10px;
+			margin-top: 8px;
+			font-weight: 600;
+		}
 	}
 	&_more_btn {
 		background-color: transparent;

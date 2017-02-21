@@ -12,12 +12,6 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	
 	<script type="text/javascript" src="app/app-dist.js"></script>
-	<!-- <script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.circliful.min.js"></script>
-	<script type="text/javascript" src="js/jquery.viewportchecker.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script type="text/javascript" src="js/typed.js"></script>
-	<script type="text/javascript" src="js/function.js"></script> -->
 
 </head>
 
@@ -216,7 +210,8 @@
 				<a href="all" class="portfolio_filter_link active">Все</a>
 				<a href="static" class="portfolio_filter_link">Статичная вёрстка</a>
 				<a href="adaptive" class="portfolio_filter_link">Адаптивная вёрстка</a>
-				<a href="flexible" class="portfolio_filter_link">Резиновая вёрстка</a>
+				<a href="site" class="portfolio_filter_link">Сайты</a>
+				<a href="landing" class="portfolio_filter_link">Продающие страницы</a>
 			</div>
 
 			<!-- begin grid portfolio_grid -->
@@ -289,7 +284,7 @@
 					<div class="grid_pricing_item grid_pricing_item_form">
 						<form class="form" id="" action="/">
 							<input type="hidden" name="subject" value="Заявка из блока Цены">
-							<legend class="form__legend">Заполните форму и я расчитаю стоимость работы именно для Вышего сайта</legend>
+							<legend class="form__legend">Заполните форму и я расчитаю стоимость работы именно для Вaшего сайта</legend>
 							<div class="grid grid__2 ">
 								<div class="grid__wrapper">
 									<div class="grid__item">
@@ -382,7 +377,7 @@
 				<input type="hidden" name="subject" value="Заявка из модали">
 				<a href="#" class="modal-close" data-dismiss="modal"></a>
 				<div class="modal-header">
-					<div class="modal-title" id="myModalLabel">Заполните форму и я расчитаю стоимость работы именно для Вышего сайта</div>
+					<div class="modal-title" id="myModalLabel">Заполните форму и я расчитаю стоимость работы именно для Вaшего сайта</div>
 				</div>
 				<div class="modal-body">
 					<div class="grid_pricing grid_pricing_item_form">
@@ -436,25 +431,203 @@ $(document).ready(function() {
 	// var url = 'sitelist.php'
 	var data = [
 		{
-			categori: 'adaptive', 
+			categori: 'adaptive site', 
 			title: 'Blue Med', 
+			hashTags: '#site #responsive',
 			description: 'Адаптивный сайт медицинской тематики',
 			dir: '/jobs/blu_med/', 
-		}, { 
-			categori: 'static', 
-			title: 'Приключения Барона Мюнхгаузена', 
-			description: 'Лендинг для театральной постановки - «Приключения Барона Мюнхгаузена» от J&M Show в театре Эстрады им. Райкина',
-			dir: '/jobs/baron/', 
 		}, {
-			categori: 'adaptive', 
+			categori: 'adaptive landing', 
+			title: 'JustContent', 
+			hashTags: '#landing #adaptive #animation',
+			description: 'Лендинг по продаже онлайн-курсов',
+			dir: '/jobs/justcontent/', 
+		}, {
+			categori: 'adaptive landing', 
 			title: 'Физика невозможного', 
+			hashTags: '#landing #responsive #animation',
 			description: 'Адаптивный лэндинг для премиального научного шоу для взрослой аудитории "Физика невозможного"',
 			dir: '/jobs/art/', 
 		}, {
 			categori: 'static', 
+			title: 'gotovie.OOO',
+			hashTags: '#landing #adaptive #animation',
+			description: 'Адаптивный лендинг с анимацией для торговой компании',
+			dir: '/jobs/franshisa/', 
+		}, { 
+			categori: 'static landing', 
+			title: 'Приключения Барона Мюнхгаузена', 
+			hashTags: '#landing',
+			description: 'Лендинг для театральной постановки - «Приключения Барона Мюнхгаузена» от J&M Show в театре Эстрады им. Райкина',
+			dir: '/jobs/baron/', 
+		}, {
+			categori: 'static landing', 
 			title: '4 цилиндра', 
+			hashTags: '#landing #static',
 			description: 'Лендинг для магазина по продаже контрактных двигателей',
 			dir: '/jobs/4cilindra/', 
+		}, {
+			categori: 'static site', 
+			title: 'Аврора сервис', 
+			hashTags: '#site #static #bitrix',
+			description: 'Сайт для сервисного центра ООО «АВРОРА СЕРВИС»',
+			dir: '/jobs/avrora/', 
+		}, {
+			categori: 'adaptive landing', 
+			title: 'Александр Тарков', 
+			hashTags: '#landing #responsive',
+			description: 'Адаптивный лендинг для тренера-консультанта по продажам Александра Таркова',
+			dir: '/jobs/businesstg/', 
+		}, {
+			categori: 'adaptive site', 
+			title: 'EVRIMA EVENTS', 
+			hashTags: '#site #responsive',
+			description: 'Сайт для агентства праздников EVRIMA EVENTS с текстовой страницей',
+			dir: '/jobs/evrima/', 
+		}, {
+			categori: 'adaptive site', 
+			title: 'Биржа обмена валют', 
+			hashTags: '#site #responsive #bootstrap',
+			description: 'Сайт для интернет-сервиса с личным кабинетом',
+			dir: '/jobs/exrates/', 
+		}, {
+			categori: 'static site', 
+			title: 'TheGarage.Pro', 
+			hashTags: '#site',
+			description: 'Сайт для тюнинг-студии «TheGarage»',
+			dir: '/jobs/garage/', 
+		}, {
+			categori: 'static site', 
+			title: '«ЖилФонд»', 
+			hashTags: '#site',
+			description: 'Главная cтраница сайта для компании «ЖилФонд»',
+			dir: '/jobs/gilfond/', 
+		}, {
+			categori: 'adaptive site', 
+			title: 'GlobalCart', 
+			hashTags: '#site #responsive #symfony',
+			description: 'Сайт для интернет-сервиса «GlobalCart» с личным кабинетом',
+			dir: '/jobs/glcart/', 
+		}, {
+			categori: 'site adaptive', 
+			title: 'Grow', 
+			hashTags: '#site #flex #ajax #parallax',
+			description: 'Резиновый сайт с параллакс-анимацией',
+			dir: '/jobs/grow/', 
+		}, {
+			categori: 'site', 
+			title: 'Hamamatsu', 
+			hashTags: '#site',
+			description: 'Главная cтраница сайта для компании «Hamamatsu»',
+			dir: '/jobs/hamamatsu/', 
+		}, {
+			categori: 'landing', 
+			title: 'Inex Post', 
+			hashTags: '#landing #bitrix',
+			description: 'Лендинг под Битрикс для «Inex Post»',
+			dir: '/jobs/inex-lp/', 
+		}, {
+			categori: 'site', 
+			title: 'UL.EXPRESSALE', 
+			hashTags: '#site',
+			description: 'Главная cтраница сайта для магазина «UL.EXPRESSALE»',
+			dir: '/jobs/inier/', 
+		}, {
+			categori: 'landing', 
+			title: 'Движем Недвижимое.рф', 
+			hashTags: '#landing',
+			description: 'Просто красивый лэндинг',
+			dir: '/jobs/invest-busines/', 
+		}, {
+			categori: 'landing adaptive', 
+			title: 'JETBUREAU', 
+			hashTags: '#landing #responsive #animation',
+			description: 'Лендинг с большим количеством разных эффектов',
+			dir: '/jobs/jb/', 
+		}, {
+			categori: 'landing', 
+			title: '«J&M CAMP»', 
+			hashTags: '#landing',
+			description: 'Лэндинг для J&M Camp - на этот раз театрально-музыкальный лагерь',
+			dir: '/jobs/jm_camp/', 
+		}, {
+			categori: 'site adaptive', 
+			title: 'Комсомолка', 
+			hashTags: '#site #responsive #animation #ajax',
+			description: 'Новостной сайт с эфектом перелистывания и Ajax загрузкой страниц',
+			dir: '/jobs/komsomolka/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/mansclub/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/mebelge/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/mile&more/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/offshore/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/origami/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/osetskiy/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/povar/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/princessyacht/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/saleplan/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/space/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/spacemir/', 
+		// }, {
+		// 	categori: 'site', 
+		// 	title: '', 
+		// 	hashTags: '#site',
+		// 	description: '',
+		// 	dir: '/jobs/tehnocon/', 
 		}
 	];
 
@@ -463,23 +636,7 @@ $(document).ready(function() {
 	// for (var i = 0; i < data.length; i++) {		
 	for (var i = 0; i < data.length && i < 9; i++) {		
 		$('.portfolio_grid').append('' +
-			'<div class="grid__wrapper" data-filter="'+data[i].categori+'">' +
-			'<div class="grid__item">' +
-			'<img src="'+data[i].dir+'/screen.jpg" alt=""/>' +
-			'<div class="portfolio_overlay">' +
-			'<div class="portfolio_overlay_wrapp">' +
-			'<div class="portfolio_overlay_wrapp_midle">' +
-			'<div class="portfolio_overlay_title">'+data[i].title+'</div>' +
-			'<div class="portfolio_overlay_text">'+data[i].description+'</div>' +
-			'<a href="'+data[i].dir+'" class="portfolio_overlay_link" target="blank">Перейти на сайт</a>' +
-			'</div></div></div></div></div>');
-	}
-
-	$('.portfolio_more_btn').on('click', function() {
-		event.preventDefault();
-		for (var i = 9; i < data.length; i++) {		
-			$('.portfolio_grid').append('' +
-				'<div class="grid__wrapper" data-filter="'+data[i].categori+'">' +
+				'<div class="grid__wrapper '+data[i].categori+'">' +
 				'<div class="grid__item">' +
 				'<img src="'+data[i].dir+'/screen.jpg" alt=""/>' +
 				'<div class="portfolio_overlay">' +
@@ -487,6 +644,24 @@ $(document).ready(function() {
 				'<div class="portfolio_overlay_wrapp_midle">' +
 				'<div class="portfolio_overlay_title">'+data[i].title+'</div>' +
 				'<div class="portfolio_overlay_text">'+data[i].description+'</div>' +
+				'<div class="portfolio_overlay_hash">'+data[i].hashTags+'</div>' +
+				'<a href="'+data[i].dir+'" class="portfolio_overlay_link" target="blank">Перейти на сайт</a>' +
+				'</div></div></div></div></div>');
+	}
+
+	$('.portfolio_more_btn').on('click', function() {
+		event.preventDefault();
+		for (var i = 9; i < data.length; i++) {		
+			$('.portfolio_grid').append('' +
+				'<div class="grid__wrapper '+data[i].categori+'">' +
+				'<div class="grid__item">' +
+				'<img src="'+data[i].dir+'/screen.jpg" alt=""/>' +
+				'<div class="portfolio_overlay">' +
+				'<div class="portfolio_overlay_wrapp">' +
+				'<div class="portfolio_overlay_wrapp_midle">' +
+				'<div class="portfolio_overlay_title">'+data[i].title+'</div>' +
+				'<div class="portfolio_overlay_text">'+data[i].description+'</div>' +
+				'<div class="portfolio_overlay_hash">'+data[i].hashTags+'</div>' +
 				'<a href="'+data[i].dir+'" class="portfolio_overlay_link" target="blank">Перейти на сайт</a>' +
 				'</div></div></div></div></div>');
 		}

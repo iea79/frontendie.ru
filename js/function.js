@@ -70,26 +70,22 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		var filterLink = $(this).attr('href');
-		var filterItem = $('.portfolio_grid .grid__wrapper');
+			filterItem = $('.portfolio_grid .grid__wrapper');
+			filterItemLink = filterItem.hasClass(filterLink);
 
 		$('#portfolio_filter a').removeClass('active');
 		$(this).addClass('active')
 
-		if (filterLink == 'all') {
+
+		if (filterLink != 'all') {
+			filterItem.addClass('hidden').removeClass('visiblity');
+			filterItem.each(function(index, el) {
+				if ($(this).hasClass(filterLink)) {
+					$(this).removeClass('hidden').addClass('visiblity');
+				}
+			});
+		} else {
 			filterItem.removeClass('hidden');
-			console.log('ALL')
-		} if (filterLink == 'static') {
-			filterItem.addClass('hidden').removeClass('visiblity');
-			$('.portfolio_grid div[data-filter="static"]').removeClass('hidden').addClass('visiblity');
-			console.log('STATIC')
-		} if (filterLink == 'adaptive') {
-			filterItem.addClass('hidden').removeClass('visiblity');
-			$('.portfolio_grid div[data-filter="adaptive"]').removeClass('hidden').addClass('visiblity');
-			console.log('ADAPTIVE')
-		} if (filterLink == 'flexible') {
-			filterItem.addClass('hidden').removeClass('visiblity');
-			$('.portfolio_grid div[data-filter="flexible"]').removeClass('hidden').addClass('visiblity');
-			console.log('ADAPTIVE')
 		}
 
 	});
