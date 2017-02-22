@@ -137,11 +137,11 @@ $(document).ready(function() {
 				});
 
 				$('#skill_jquery').circliful({
-					percent: 70,
+					percent: 80,
 				});
 
 				$('#skill_js').circliful({
-					percent: 40,
+					percent: 60,
 				});
 			}, 11000);
 		}
