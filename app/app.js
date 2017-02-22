@@ -5,5 +5,6 @@
 //@prepros-append ../js/typed.js
 //@prepros-append ../js/modal.js
 //@prepros-append ../js/tab.js
+//@prepros-append ../js/portfolio.js
 //@prepros-append ../js/function.js
 //@prepros-append ../js/validate.js
