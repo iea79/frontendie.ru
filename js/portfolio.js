@@ -20,7 +20,7 @@ $(document).ready(function() {
 			description: 'Адаптивный лэндинг для премиального научного шоу для взрослой аудитории "Физика невозможного"',
 			dir: '/jobs/art/', 
 		}, {
-			categori: 'static', 
+			categori: 'adaptive landing', 
 			title: 'gotovie.OOO',
 			hashTags: '#landing #adaptive #animation',
 			description: 'Адаптивный лендинг с анимацией для торговой компании',
@@ -92,51 +92,57 @@ $(document).ready(function() {
 			description: 'Сайт для интернет-сервиса с личным кабинетом',
 			dir: '/jobs/exrates/', 
 		}, {
+			categori: 'site static', 
+			title: 'Technocon', 
+			hashTags: '#site #shop #static',
+			description: 'Статичный сайт для магазина бытовой техники',
+			dir: '/jobs/tehnocon/', 
+		}, {
 			categori: 'static site', 
 			title: 'TheGarage.Pro', 
-			hashTags: '#site',
+			hashTags: '#site #static',
 			description: 'Сайт для тюнинг-студии «TheGarage»',
 			dir: '/jobs/garage/', 
 		}, {
 			categori: 'static site', 
 			title: '«ЖилФонд»', 
-			hashTags: '#site',
+			hashTags: '#site #static',
 			description: 'Главная cтраница сайта для компании «ЖилФонд»',
 			dir: '/jobs/gilfond/', 
 		}, {
 			categori: 'site static', 
 			title: 'Hamamatsu', 
-			hashTags: '#site',
+			hashTags: '#site #static',
 			description: 'Главная cтраница сайта для компании «Hamamatsu»',
 			dir: '/jobs/hamamatsu/', 
 		}, {
 			categori: 'landing static', 
 			title: 'Inex Post', 
-			hashTags: '#landing #bitrix',
+			hashTags: '#landing #bitrix #static',
 			description: 'Лендинг под Битрикс для «Inex Post»',
 			dir: '/jobs/inex-lp/', 
 		}, {
 			categori: 'site static', 
 			title: 'UL.EXPRESSALE', 
-			hashTags: '#site',
+			hashTags: '#site #static',
 			description: 'Главная cтраница сайта для магазина «UL.EXPRESSALE»',
 			dir: '/jobs/inier/', 
 		}, {
 			categori: 'landing static', 
 			title: 'Движем Недвижимое.рф', 
-			hashTags: '#landing',
+			hashTags: '#landing #static',
 			description: 'Просто красивый лэндинг',
 			dir: '/jobs/invest-busines/', 
 		}, {
 			categori: 'landing static', 
 			title: '«J&M CAMP»', 
-			hashTags: '#landing',
+			hashTags: '#landing #static',
 			description: 'Лэндинг для J&M Camp - на этот раз театрально-музыкальный лагерь',
 			dir: '/jobs/jm_camp/', 
 		}, {
 			categori: 'site static', 
 			title: 'Mens club', 
-			hashTags: '#site #adult',
+			hashTags: '#site #adult #static',
 			description: 'Мужской сайт «Mens club»',
 			dir: '/jobs/mansclub/', 
 		}, {
@@ -166,7 +172,7 @@ $(document).ready(function() {
 		}, {
 			categori: 'landing static', 
 			title: 'МОЙ ПОВАР', 
-			hashTags: '#landing',
+			hashTags: '#landing #static',
 			description: 'Лэндинг для банкетной компании',
 			dir: '/jobs/povar/', 
 		}, {
@@ -193,12 +199,6 @@ $(document).ready(function() {
 			hashTags: '#landing #responsive #animation',
 			description: 'Адаптивный лэндинг с анимациями при прокрутке',
 			dir: '/jobs/spacemir/', 
-		}, {
-			categori: 'site static', 
-			title: 'Technocon', 
-			hashTags: '#site #shop',
-			description: 'Статичный сайт для магазина бытовой техники',
-			dir: '/jobs/tehnocon/', 
 		}
 	];
 
