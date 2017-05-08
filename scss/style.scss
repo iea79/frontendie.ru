@@ -629,6 +629,8 @@ input[type=checkbox]:disabled:indeterminate:before {
 
 .copy {
 	float: right;
+	color: lighten(#000, 50%);
+	color: darken(#000, 50%);
 }
 
 
