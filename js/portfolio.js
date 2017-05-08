@@ -220,7 +220,7 @@ $(document).ready(function() {
 				'</div></div></div></div></div>');
 	}
 
-	$('.portfolio_more_btn').on('click', function() {
+	$('.portfolio_more_btn').on('click', function(event) {
 		event.preventDefault();
 		for (var i = 9; i < portfolioData.length; i++) {		
 			$('.portfolio_grid').append('' +
