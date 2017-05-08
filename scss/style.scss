@@ -509,28 +509,28 @@ input[type=checkbox]:disabled:indeterminate:before {
 	&__wrapper {
 		padding-left: $grid_padding;
 		padding-bottom: $grid_padding;
-		@include flex(0 1 auto);
+		@include flex(1 1 auto);
 		&.width {
 			&_1_1 {
-				@include flex(1 0 100%);
+				@include flex(1 1 100%);
 			}
 			&_1_2 {
-				@include flex(1 0 50%);
+				@include flex(1 1 50%);
 			}
 			&_1_3 {
 				@include flex(1 1 33%);
 			}
 			&_1_4 {
-				@include flex(1 0 25%);
+				@include flex(1 1 25%);
 			}
 			&_1_5 {
-				@include flex(1 0 20%);
+				@include flex(1 1 20%);
 			}
 			&_2_3 {
-				@include flex(1 0 66%);
+				@include flex(1 1 66%);
 			}
 			&_3_4 {
-				@include flex(1 0 75%);
+				@include flex(1 1 75%);
 			}
 		}
 	}
@@ -541,28 +541,28 @@ input[type=checkbox]:disabled:indeterminate:before {
 	}
 	&__1 {
 		.grid__wrapper {		
-			@include flex(1 0 100%);
+			@include flex(1 1 100%);
 		}
 	}
 	&__2 {
 		.grid__wrapper {		
-			@include flex(1 0 50%);
+			@include flex(1 1 50%);
 		}
 	}
 	&__3 {
 		.grid__wrapper {
 			width: 33.3%;		;
-			@include flex(1 0 33%);
+			@include flex(1 1 33%);
 		}
 	}
 	&__4 {
 		.grid__wrapper {		
-			@include flex(1 0 25%);
+			@include flex(1 1 25%);
 		}
 	}
 	&__5 {
 		.grid__wrapper {		
-			@include flex(1 0 20%);
+			@include flex(1 1 20%);
 		}
 	}
 }
@@ -633,6 +633,21 @@ input[type=checkbox]:disabled:indeterminate:before {
 	color: darken(#000, 50%);
 }
 
+.bg_canvas {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	max-width: 100%;
+	z-index: 0;
+	// max-height: 100%;
+}
+
+section {
+	position: relative;
+}
+
 
 /* Header
  ----------------------------------------------------------------------------- */
@@ -645,6 +660,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	padding-top: 44px;
 	@include trs(.5s);
 	@extend %clear_a;
+	z-index: 6;
 }
 
 .logo {
@@ -733,13 +749,28 @@ input[type=checkbox]:disabled:indeterminate:before {
 	}
 }
 
+
+.bgvideo {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 1;
+}
+
 .first_screen {
 	background: image-url('first-screen.jpg') no-repeat center center;
 	background-size: cover;
 	background-attachment: fixed;
+	overflow: hidden;
 	.container_center {
 		display: table;
 		width: 100%;
+		position: relative;
+		z-index: 3;
 	}
 	&_wrapper {
 		display: table-cell;
@@ -749,9 +780,9 @@ input[type=checkbox]:disabled:indeterminate:before {
 		color: #fefefe;
 		font-size: 72px;
 		font-weight: 100;
-		line-height: 86px;
 		text-transform: uppercase;
 		margin-bottom: 8%;
+		line-height: 86px;
 	}
 	&_btn {
 		width: 270px;
@@ -767,6 +798,17 @@ input[type=checkbox]:disabled:indeterminate:before {
 			background-color: #14b4ff;
 			@include box-shadow(0 0 24px rgba(0, 137, 254, 0.64));
 		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 137, 254, 0.4);
+		z-index: 2;
+		display: block;
 	}
 }
 .modal {
@@ -802,13 +844,13 @@ input[type=checkbox]:disabled:indeterminate:before {
 		padding: 2% 15px;
 	}
 	.section_title {
-		font-size: 0;
-		opacity: 0;
-		@include trs(.8s);
-		&.open {
-			opacity: 1;
+		// font-size: 0;
+		// opacity: 0;
+		// @include trs(.8s);
+		// &.open {
+		// 	opacity: 1;
 			font-size: 43px;
-		}
+		// }
 	}
 	&_wrapp {
 		display: table-cell;
@@ -818,6 +860,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	&_grid {
 		max-width: 970px;
 		margin: 0 auto 3%;
+		@include flex-flow(row nowrap);
 		.grid__item {}
 	}
 	&_title {
@@ -883,31 +926,32 @@ input[type=checkbox]:disabled:indeterminate:before {
 .skills {
 	&_grid {
 		margin-left: 0;
-		overflow: hidden;
+		// overflow: hidden;
 		text-align: center;
+		@include flex-flow(row nowrap);
 		@include trs(.5s);
 		&.open {
-			height: auto;
-			.grid__wrapper {
-				width: 24.5%;
-				opacity: 1;
-			}
+			// height: auto;
+			// .grid__wrapper {
+			// 	width: 24.5%;
+			// 	opacity: 1;
+			// }
 		}
 		.grid__wrapper {
 			padding-left: 0;
 			position: relative;
-			width: 0;
-			opacity: 0;
-			float: none;
-			display: inline-block;
+			// width: 0;
+			// opacity: 0;
+			float: left;
+			display:inline-block;
 			@include trs(2s);
 			&:before {
 				content: '';
 				display: block;
 				position: absolute;
 				width: 76%;
-				height: 70.200000000000003%;
-				top: 12.199999999999999%;
+				padding-bottom: 76%;
+				top: 11.9%;
 				left: 13%;
 				border: 2px dotted #b3b3b3;
 				@include border-radius(50%);
@@ -921,7 +965,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 				display: block;
 				position: absolute;
 				width: 54%;
-				height: 55.8%;
+				padding-bottom: 54%;
 				top: 24.3%;
 				left: 24.1%;
 				border: 2px solid #20a3ff;
@@ -932,7 +976,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 				display: block;
 				position: absolute;
 				width: 72%;
-				height: 73.8%;
+				padding-bottom: 72%;
 				top: 15.3%;
 				left: 15%;
 				border: 2px solid #20a3ff;
@@ -1002,8 +1046,8 @@ input[type=checkbox]:disabled:indeterminate:before {
 			// opacity: 0;
 			@include trs(.5s);
 			// &.hidden {
-				// @include animation-duration(1s);
-				// @include animation-fill-mode(both);
+			// 	@include animation-duration(1s);
+			// 	@include animation-fill-mode(both);
 			// 	@include animation-name(zoomOut);
 			// 	display: none;
 			// }
@@ -1142,6 +1186,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 // Technology ------------------------------------------------------------------
 .technology {
 	background-color: #f7f7f7;
+	overflow: hidden;
 	.container_center {
 		padding: 2% 15px;
 	}
@@ -1169,6 +1214,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 .review {
 	background-color: #1a83cd;
 	position: relative;
+	overflow: hidden;
 	&:before {
 		content: '';
 		position: absolute;
@@ -1241,6 +1287,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	margin-top: 30px;
 	margin-left: -20px;
 	margin-bottom: 70px;
+	@include flex-flow(row nowrap);
 	.grid {
 		margin-left: -20px;
 	}
@@ -1529,6 +1576,11 @@ input[type=checkbox]:disabled:indeterminate:before {
 	padding: 18px 0;
 	color: #fff;
 	font-size: 13px;
+	overflow: hidden;
+	.container_center {
+		position: relative;
+		z-index: 2;
+	}
 	@extend %clear_all;
 	a {
 		color: #fff;
@@ -1561,3 +1613,5 @@ input[type=checkbox]:disabled:indeterminate:before {
 @media (max-width: $breakpoint-small) {
 	
 }
+
+

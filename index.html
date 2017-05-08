@@ -6,7 +6,8 @@
 	<title>Профессиональная верстка сайтов - Евгений Иванов</title>
 	<meta name="keywords" content="верстка сайта, html верстка, адаптивная верстка, резиновая верстка, bitrix верстка, symfony верстка, Jade верстка, HTML, HTML5, css, scss, sass, compass, jQuery, javascript, js, frontend, ssi верстка, bootstrap, uikit" />
 	<meta name="description" content="Профессиональная верстка сайтов любой сложности" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+	<meta name="viewport" content="width=1024" />
 
 	<link href="css/slick.css" rel="stylesheet" type="text/css" />
 	<!-- <link href="css/animate.css" rel="stylesheet" type="text/css" /> -->
@@ -23,7 +24,7 @@
 	<header id="header" class="header">
 		<div class="container_center">
 
-			<a href="#first_screen" class="logo"><img class="logo_main" src="img/logo.png" alt=""><img class="logo_sticky" src="img/sticky_logo.png" alt=""/></a>
+			<a href="#first_screen" class="logo"><img class="logo_main" src="img/logo.png" alt=""><img class="logo_sticky" src="img/sticky_logo.png" alt="Профессиональная верстка сайтов"/></a>
 		
 			<!-- begin navbar  -->
 			<ul class="navbar ">
@@ -53,11 +54,14 @@
 		<div class="container_center">
 		
 			<div class="first_screen_wrapper">
-				<h1 class="first_screen_title">Профессиональная <br>верстка сайтов</h1>
+				<h1 class="first_screen_title"><span>Профессиональная</span> <br><span>верстка сайтов</span></h1>
 				<button class="btn first_screen_btn" data-toggle="modal" data-target="#modal_callback">Заказать</button>
 			</div>
 			
 		</div>
+		<video autoplay loop muted class="bgvideo" id="bgvideo">
+			<source src="video/bg.mp4" type="video/mp4">
+		</video>
 	</section>
 	<!-- end first_screen -->
 
@@ -125,6 +129,7 @@
 
 	<!-- begin technology -->
 	<section id="technology" class="technology">
+		<canvas class="bg_canvas"></canvas>
 		<div class="container_center">
 		
 			<h3 class="section_title">
@@ -136,62 +141,62 @@
 			<div class="technology_slider">
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/tech1.png" alt=""/>
+						<img src="img/tech1.png" alt="sass"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/tech2.png" alt=""/>
+						<img src="img/tech2.png" alt="Bootstrap"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/tech3.png" alt=""/>
+						<img src="img/tech3.png" alt="Uikit"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/tech4.png" alt=""/>
+						<img src="img/tech4.png" alt="Twig"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/tech5.png" alt=""/>
+						<img src="img/tech5.png" alt="Jade/Pag"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/jquery.png" alt=""/>
+						<img src="img/jquery.png" alt="jQuery"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/HTML5.png" alt=""/>
+						<img src="img/HTML5.png" alt="HTML5"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/CSS3.png" alt=""/>
+						<img src="img/CSS3.png" alt="CSS"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/git.png" alt=""/>
+						<img src="img/git.png" alt="Git"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/js.png" alt=""/>
+						<img src="img/js.png" alt="Javascript"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/photoshop.png" alt=""/>
+						<img src="img/photoshop.png" alt="Photoshop"/>
 					</div>
 				</div>
 				<div class="technology_slider_item">
 					<div class="technology_slider_img">
-						<img src="img/sketch.png" alt=""/>
+						<img src="img/sketch.png" alt="Sketch"/>
 					</div>
 				</div>
 			</div>
@@ -228,6 +233,7 @@
 
 	<!-- begin review -->
 	<section id="review" class="review">
+		<canvas class="bg_canvas"></canvas>
 		<div class="container_center">
 		
 			<h3 class="section_title">Отзывы</h3>
@@ -354,6 +360,7 @@
 
 <!-- begin footer -->
 <footer class="footer">
+	<canvas class="bg_canvas"></canvas>
 
 	<div class="container_center">
 	
