@@ -162,7 +162,6 @@ $btn_contrast_text_color:                        #fff;
 
 @import "modal";
 @import "tabs";
-@import "animate";
 
 // End @mixin and variables
 
@@ -426,9 +425,6 @@ input[type=checkbox]:disabled:indeterminate:before {
 	color: red;
 }
 
-// 
-// @TODO: Add docs to flexbox!
-// 
 @mixin flexbox() {
 	display: -webkit-box;
 	display: -moz-box;
@@ -445,7 +441,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	flex:  $values;
 }
 
-@mixin order($val) {
+@mixin flex-order($val) {
 	-webkit-order: $val;  
 	order: $val;
 }
@@ -476,14 +472,6 @@ input[type=checkbox]:disabled:indeterminate:before {
     align-content: $params;
 }
 
-// 
-// @TODO: Add docs to align-items: flex-start | flex-end | center | baseline | stretch!
-//
-@mixin align-items($params) {
-    -webkit-align-items: $params;
-    align-items: $params;
-}
-
 // End @mixin and variables
 
 // Grid
@@ -503,66 +491,45 @@ input[type=checkbox]:disabled:indeterminate:before {
 // ------------------------
 .grid {
 	margin-left: -$grid_padding;
-	@include flexbox();
-	@include flex-flow(row wrap);
-	@extend %clear_all;
+	// @include flexbox();
+	// @include flex-flow(row wrap);
+	@extend %clear_a;
 	&__wrapper {
 		padding-left: $grid_padding;
 		padding-bottom: $grid_padding;
-		@include flex(1 1 auto);
-		&.width {
-			&_1_1 {
-				@include flex(1 1 100%);
-			}
-			&_1_2 {
-				@include flex(1 1 50%);
-			}
-			&_1_3 {
-				@include flex(1 1 33%);
-			}
-			&_1_4 {
-				@include flex(1 1 25%);
-			}
-			&_1_5 {
-				@include flex(1 1 20%);
-			}
-			&_2_3 {
-				@include flex(1 1 66%);
-			}
-			&_3_4 {
-				@include flex(1 1 75%);
-			}
-		}
+		float: left;
 	}
 	&__item {
-		&.active {
-			// border: 3px solid #ddd;
-		}
+
 	}
 	&__1 {
-		.grid__wrapper {		
-			@include flex(1 1 100%);
+		.grid__wrapper {
+			width: 100%;	
+			// @include flex(1 0 100%);
 		}
 	}
 	&__2 {
-		.grid__wrapper {		
-			@include flex(1 1 50%);
+		.grid__wrapper {
+			width: 50%;		
+			// @include flex(1 0 50%);
 		}
 	}
 	&__3 {
 		.grid__wrapper {
-			width: 33.3%;		;
-			@include flex(1 1 33%);
+			width: 33.333%;		
+			// @include flex(1 0 33%);
 		}
 	}
 	&__4 {
-		.grid__wrapper {		
-			@include flex(1 1 25%);
+		.grid__wrapper {
+			width: 25%;	
+			// @include flex(1 0 25%);
 		}
 	}
 	&__5 {
-		.grid__wrapper {		
-			@include flex(1 1 20%);
+		.grid__wrapper {
+			width: 20%;		
+			// @include flex(1 0 20%);
 		}
 	}
 }
@@ -1037,32 +1004,20 @@ section {
 	}
 	&_grid {
 		.grid__wrapper {
-			@include flex(0 1 33%);
 			position: relative;
 			padding-bottom: 30px;
 			overflow: hidden;
-			@include animation-duration(.5s);
-			@include animation-fill-mode(both);
-			// opacity: 0;
 			@include trs(.5s);
-			// &.hidden {
-			// 	@include animation-duration(1s);
-			// 	@include animation-fill-mode(both);
-			// 	@include animation-name(zoomOut);
-			// 	display: none;
-			// }
-			// &.visiblity {
-			// 	@include animation-duration(1s);
-			// 	@include animation-fill-mode(both);
-			// 	@include animation-name(zoomIn);
-			// 	display: block;
-			// }
+			&.hidden {
+				display: none;
+			}
 		}
 		.grid__item {
 			position: relative;
+			cursor: pointer;
 			overflow: hidden;
 			padding-bottom: 69.9%;
-			border: 1px dotted #a6a6a6;
+			// border: 1px solid #20a3ff;
 			&:hover {
 				.portfolio_overlay {
 					top: 0;
@@ -1127,7 +1082,7 @@ section {
 		&_title {
 			color: white;
 			font-size: 0px;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 			@include trs(.5s);
 		}
 		&_link {
@@ -1180,8 +1135,16 @@ section {
 			color: #fff;
 		}
 	}
+	.hidden {
+		width: 0;
+		padding-left: 0;
+		opacity: 0;
+	}
+	.visiblity {
+		width: 33.299999999999997%;
+		opacity: 1;
+	}
 }
-
 
 // Technology ------------------------------------------------------------------
 .technology {

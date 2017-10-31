@@ -114,17 +114,14 @@ $(document).ready(function() {
 
 
 		if (filterLink != 'all') {
-			filterItem.addClass('zoomOut').hide().removeClass('zoomIn');
+			filterItem.addClass('hidden').removeClass('visiblity');
 			filterItem.each(function(index, el) {
 				if ($(this).hasClass(filterLink)) {
-					$(this).removeClass('zoomOut').show().addClass('zoomIn');
+					$(this).removeClass('hidden').addClass('visiblity');
 				}
 			});
 		} else {
-			// filterItem.removeClass('zoomOut').show().addClass('zoomIn');
-			filterItem.each(function(index, el) {
-				$(this).removeClass('zoomOut zoomIn').show().addClass('zoomIn');
-			});
+			filterItem.removeClass('hidden');
 		}
 
 	});
@@ -183,19 +180,12 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#portfolio .grid__wrapper').each(function(index, el) {
-		$(this).hide();
-	});
-
-	$('#portfolio .grid').viewportChecker({
+	$('.portfolio_grid').viewportChecker({
 		callbackFunction: function () {
-			var item = $('#portfolio .grid__wrapper');
-			item.each(function(i) {
-				$(this).delay((i++) * 500).addClass('slideInUp').show().delay(500);
-			});
-			setTimeout(function() {
-				item.removeClass('slideInUp');
-			}, 1000);
+			$('.portfolio .grid__wrapper').removeClass('hidden');
+			// console.log('removeClass hidden');
+			$(this).removeClass('visiblity');
+			// console.log('removeClass visiblity');
 		}
 	})
 
