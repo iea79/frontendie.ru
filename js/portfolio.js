@@ -204,9 +204,12 @@ $(document).ready(function() {
 
 	if (portfolioData.length <= 9) {$('.portfolio_more_btn').hide();}
 
-	// for (var i = 0; i < portfolioData.length; i++) {		
-	for (var i = 0; i < portfolioData.length && i < 9; i++) {		
-		$('.portfolio_grid').append('' +
+    // $.get(portfolioData, function(data){
+    //     console.log(data.list[1].name);
+    // });
+
+	function portfolioTempl(offset) {
+		$('.portfolio_grid').append(
 				'<div class="grid__wrapper animated '+portfolioData[i].categori+'">' +
 				'<div class="grid__item">' +
 				'<img src="'+portfolioData[i].dir+'/screen.jpg" alt=""/>' +
