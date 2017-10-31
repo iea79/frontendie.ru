@@ -170,7 +170,7 @@ $(document).ready(function() {
 				});
 
 				$('#skill_jquery').circliful({
-					percent: 80,
+					percent: 90,
 				});
 
 				$('#skill_js').circliful({
