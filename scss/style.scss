@@ -491,8 +491,8 @@ input[type=checkbox]:disabled:indeterminate:before {
 // ------------------------
 .grid {
 	margin-left: -$grid_padding;
-	// @include flexbox();
-	// @include flex-flow(row wrap);
+	@include flexbox();
+	@include flex-flow(row wrap);
 	@extend %clear_a;
 	&__wrapper {
 		padding-left: $grid_padding;
