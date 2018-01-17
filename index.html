@@ -2,9 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<title>Профессиональная верстка сайтов - Евгений Иванов</title>
-	<meta name="keywords" content="верстка сайта, html верстка, адаптивная верстка, резиновая верстка, bitrix верстка, symfony верстка, Jade верстка, HTML, HTML5, css, scss, sass, compass, jQuery, javascript, js, frontend, ssi верстка, bootstrap, uikit" />
+	<meta name="keywords" content="верстка сайта, html верстка, адаптивная верстка, резиновая верстка, bitrix верстка, symfony верстка, Jade верстка, HTML, HTML5, css, scss, sass, jQuery, javascript, js, frontend, ssi верстка, bootstrap, uikit,scss, less, pixel perfect, pag(jade), jquery, javascript, twig, uikit, git, bootsrap, верстка под Simfony, верстка под Yii, верстка под Битрикс, psd, Sketch , font-face, google web fonts, adaptive, responsive, div, psd to html, вёрстка, кроссбраузерная верстка, валидная, кроссбраузерная, адаптивная, профессиональная верстка, профессиональная html верстка, профессиональная верстка сайта, профессиональная верстка сайтов, верстка сайтов, верстка сайтов html+css, html-верстка web (веб) сайтов, верстка из psd, html-верстка, html верстка, html5 верстка, верстка без cms, кроссбраузерная html-верстка, кроссбраузерная html верстка, качественная верстка, качественная верстка сайта, качественная html верстка, seo-верстка, блочная верстка, валидная верстка, валидная верстка html-страниц, верстка div, семантическая верстка, резиновая верстка, адаптивная верстка, срочная верстка, верстка в срок, верстка psd, нарезка psd, верстка макета, верстка макетов, верстка страниц, вёрстка веб-страниц, верстка лендинга, верстка landing, верстка сайта, верстка сайта html+css, верстка сайта из psd в html, верстка интернет-магазина, верстка портала, сверстать psd, сверстать сайт, верстальщик, html верстальщик, верстальщик html, html-верстальщик, профессиональный верстальщик, заказать вёрстку, заказать div блочную табличную" />
 	<meta name="description" content="Профессиональная верстка сайтов любой сложности" />
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 	<meta name="viewport" content="width=1024" />
@@ -96,28 +95,19 @@
 				<!-- begin grid skils_grid -->
 				<div class="grid grid__4 skills_grid">
 					<div class="grid__wrapper">
-						<div id="skill_html" class="grid__item skill_item">
-							<div class="skills_name">HTML</div>
-						</div>
+						<canvas  id="html_chart" width="200" height="200" data-percent="95" data-name="HTML"></canvas>
 					</div>
 					<div class="grid__wrapper">
-						<div id="skill_css" class="grid__item skill_item">
-							<div class="skills_name">CSS</div>
-						</div>
+						<canvas  id="css_chart" width="200" height="200" data-percent="95" data-name="CSS"></canvas>
 					</div>
 					<div class="grid__wrapper">
-						<div id="skill_jquery" class="grid__item skill_item">
-							<div class="skills_name">jQuery</div>
-						</div>
+						<canvas  id="jq_chart" width="200" height="200" data-percent="80" data-name="jQuery"></canvas>
 					</div>
 					<div class="grid__wrapper">
-						<div id="skill_js" class="grid__item skill_item">
-							<div class="skills_name">JS</div>
-						</div>
+						<canvas  id="js_chart" width="200" height="200" data-percent="65" data-name="JS"></canvas>
 					</div>
 				</div>
 				<!-- end grid skils_grid -->
-
 			</div>
 			
 		</div>
@@ -222,7 +212,7 @@
 			</div>
 			<!-- end grid portfolio_grid -->
 
-			<button class="btn portfolio_more_btn">Все работы</button>
+			<button class="btn portfolio_more_btn">Больше работ</button>
 			
 		</div>
 	</section>
@@ -267,13 +257,13 @@
 			<div class="grid grid_pricing">
 				<div class="grid__wrapper grid_pricing_first">
 					<div class="grid_pricing_item">
-						<div class="grid_pricing_title">15 $</div>
+						<div class="grid_pricing_title">1000 руб.</div>
 						<div class="grid_pricing_description">
 							Стоимость часа работы
 						</div>
 					</div>
 					<div class="grid_pricing_item">
-						<div class="grid_pricing_title">1700 $</div>
+						<div class="grid_pricing_title">120 000 руб.</div>
 						<div class="grid_pricing_description">
 							Стоимость месяца работы (30 часов в неделю)
 						</div>
@@ -431,8 +421,8 @@
 
 <audio id="audio" src="audio/klava.mp3"></audio>
 
-	<script type="text/javascript" src="app/app-dist.js"></script>
-	<!-- <script src="/js/jquery.js"></script>
+	<!-- <script type="text/javascript" src="app/app-dist.js"></script> -->
+	<script src="/js/jquery.js"></script>
 	<script src="/js/jquery-ui.min.js"></script>
 	<script src="/js/jquery.circliful.min.js"></script>
 	<script src="/js/jquery.viewportchecker.js"></script>
@@ -444,7 +434,7 @@
 	<script src="/js/validate.js"></script>
 	<script src="/js/pollyfill.js"></script>
 	<script src="/js/jquery.textanimation.js"></script>
-	<script src="/js/function.js"></script> -->
+	<script src="/js/function.js"></script>
 
 
 </body>

@@ -7,7 +7,8 @@
  */
 
 // Compass extention 
-@import 'compass/css3';
+// @import 'compass/css3';
+@import "mixins";
 
 // Global variables
 // ========================================================================
@@ -72,7 +73,7 @@ $el_default_bg_color:							#ddd;
 $el_default_bg_color_hover:						#ccc;
 
 $btn_default_text_color:                        #000;
-$btn_contrast_text_color:                        #fff;
+$btn_contrast_text_color:                       #fff;
 
 
 // Mixin =======================================================================
@@ -95,46 +96,9 @@ $btn_contrast_text_color:                        #fff;
 // 	@include columns-text(300px, 3, 40px, 1px, solid, #000);
 // }
 @mixin columns-text($width, $count, $padding, $divider_widh, $divider_line, $divider_color) {
-	@include columns($width $count); // Count and width or columns
-	@include column-gap($padding); // Padding for columns
-	@include column-rule($divider_widh $divider_line $divider_color); // Divider for columns
-}
-
-
-// Float el clear
-%clear_a {
-	&:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-}
-
-%clear_b {
-	&:before {
-		content: '';
-		display: table;
-		clear: both;
-	}
-}
-
-%clear_all {
-	@extend %clear_a;
-	@extend %clear_b;
-}
-
-// Transition speed for element
-@mixin trs($trs_speed) {
-	@include transition(all $trs_speed);
-}
-
-
-// Placeholder for input
-@mixin placeholder {
-	&::-webkit-input-placeholder {@content};
-	&:-moz-placeholder           {@content};
-	&::-moz-placeholder          {@content};
-	&:-ms-input-placeholder      {@content};
+	columns: $width $count; // Count and width or columns
+	column-gap: $padding; // Padding for columns
+	column-rule: $divider_widh $divider_line $divider_color; // Divider for columns
 }
 
 %line {
@@ -187,7 +151,7 @@ $btn_contrast_text_color:                        #fff;
 * {
 	margin: 0;
 	padding: 0;
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -197,7 +161,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 html,body,.wrapper {
 	height: 100%;
 	position: relative;
-	@include box-sizing(content-box);
+	box-sizing: content-box;
 }
 
 body { 
@@ -424,54 +388,6 @@ input[type=checkbox]:disabled:indeterminate:before {
 .error {
 	color: red;
 }
-
-@mixin flexbox() {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-}
-
-@mixin flex($values) {
-	-webkit-box-flex: $values;
-	-moz-box-flex:  $values;
-	-webkit-flex:  $values;
-	-ms-flex:  $values;
-	flex:  $values;
-}
-
-@mixin flex-order($val) {
-	-webkit-order: $val;  
-	order: $val;
-}
-
-// 
-// @TODO: Add docs to flex-flow!
-// flex-flow: flex-direction flex-wrap|initial|inherit;
-//
-@mixin flex-flow($params) {
-    -webkit-flex-flow: $params; /* Safari 6.1+ */
-    flex-flow: $params;
-}
-
-// 
-// @TODO: Add docs to justify-content!
-// justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;
-// 
-@mixin justify-content($params) {
-    -webkit-justify-content: $params; /* Safari 6.1+ */
-    justify-content: $params;
-}
-
-// 
-// @TODO: Add docs to     -webkit-align-content!
-//
-@mixin align-content($params) {
-    -webkit-align-content: $params;
-    align-content: $params;
-}
-
 // End @mixin and variables
 
 // Grid
@@ -491,45 +407,69 @@ input[type=checkbox]:disabled:indeterminate:before {
 // ------------------------
 .grid {
 	margin-left: -$grid_padding;
-	@include flexbox();
+	box-sizing: content-box;
+	@include flex();
 	@include flex-flow(row wrap);
-	@extend %clear_a;
-	&__wrapper {
+	@extend %clear_all;
+	&-nowrap {
+		@include flex-flow(row nowrap);
+	}
+	>div {
 		padding-left: $grid_padding;
-		padding-bottom: $grid_padding;
-		float: left;
+		margin-bottom: $grid_padding;
+		&.width {
+			&_1 {
+				width: 50%;
+			}
+			&_2 {
+				width: 50%;
+			}
+			&_3 {
+				width: 33.3%;
+			}
+			&_4 {
+				width: 25%;
+			}
+			&_5 {
+				width: 20%;
+			}
+			&_2_3 {
+				width: 66%;
+			}
+			&_3_4 {
+				width: 75%;
+			}
+		}
 	}
 	&__item {
-
+		// border: 1px solid #000;
+		&.active {
+			// border: 3px solid #ddd;
+		}
 	}
 	&__1 {
-		.grid__wrapper {
-			width: 100%;	
-			// @include flex(1 0 100%);
+		>div {		
+			width: 100%;
 		}
 	}
 	&__2 {
-		.grid__wrapper {
-			width: 50%;		
-			// @include flex(1 0 50%);
+		>div {		
+			width: 50%;
 		}
 	}
 	&__3 {
-		.grid__wrapper {
-			width: 33.333%;		
-			// @include flex(1 0 33%);
+		>div {
+			width: 33.3%;
 		}
 	}
 	&__4 {
-		.grid__wrapper {
-			width: 25%;	
-			// @include flex(1 0 25%);
+		>div {		
+			width: 25%;
 		}
 	}
 	&__5 {
-		.grid__wrapper {
-			width: 20%;		
-			// @include flex(1 0 20%);
+		>div {		
+			width: 20%;
 		}
 	}
 }
@@ -549,7 +489,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 	text-align: center;
 	max-width: 100%;
 	cursor: pointer;
-	@include border-radius(30px);
+	border-radius: 30px;
 	@include trs(0.3s);
 	&:hover {
 		background-color: $el_default_bg_color_hover;
@@ -578,7 +518,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 		display: inline-block;
 		width: 30px;
 		height: 30px;
-		@include border-radius(50%);
+		border-radius: 50%;
 		background-color: #000;
 		text-align: center;
 		text-decoration: none;
@@ -673,7 +613,7 @@ section {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	background-color: #fff;
-	@include box-shadow(0 0 4px rgba(0, 137, 254, 0.1));
+	box-shadow: 0 0 4px rgba(0, 137, 254, 0.1);
 	z-index: 1000;
 	.logo {
 		&_main {
@@ -729,7 +669,7 @@ section {
 }
 
 .first_screen {
-	background: image-url('first-screen.jpg') no-repeat center center;
+	background: url('../img/first-screen.jpg') no-repeat center center;
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
@@ -759,11 +699,11 @@ section {
 		font-size: 18px;
 		font-weight: 700;
 		text-transform: uppercase;
-		@include border-radius(29px);
-		@include box-shadow(0 7px 15.5px 2.5px rgba(0, 0, 0, 0.24));
+		border-radius: 29px;
+		box-shadow: 0 7px 15.5px 2.5px rgba(0, 0, 0, 0.24);
 		&:hover {
 			background-color: #14b4ff;
-			@include box-shadow(0 0 24px rgba(0, 137, 254, 0.64));
+			box-shadow: 0 0 24px rgba(0, 137, 254, 0.64);
 		}
 	}
 	&:after {
@@ -785,13 +725,26 @@ section {
 	}
 	.btn__primary {
 		position: relative;
-		padding: 12px 15px 13px 50px;
+		padding: 12px 29px 13px 40px;
+		margin-bottom: -15px;
+		width: 250px;
 		&:before {
-			content: image-url('plain.png');
+			content: url('../img/plain.png');
 			position: absolute;
 			left: 13px;
 			top: 10px;
 		}
+	}
+	&-footer {
+		background-color: transparent;
+		border-top: 0;
+		text-align: center;
+		padding: 0;
+		margin-bottom: -9px;
+		margin-top: 0;
+	}
+	&-header {
+		border-radius: 4px 4px 0 0;
 	}
 }
 .errore_tooltip {
@@ -807,17 +760,17 @@ section {
 	.container_center {
 		display: table;
 		width: 100%;
-		// background: image-url('arrow_long.png') no-repeat center center;
+		// background: url('../img/arrow_long.png') no-repeat center center;
 		padding: 2% 15px;
 	}
 	.section_title {
-		// font-size: 0;
-		// opacity: 0;
-		// @include trs(.8s);
-		// &.open {
-		// 	opacity: 1;
+		font-size: 0;
+		opacity: 0;
+		@include trs(.8s);
+		&.open {
+			opacity: 1;
 			font-size: 43px;
-		// }
+		}
 	}
 	&_wrapp {
 		display: table-cell;
@@ -844,7 +797,7 @@ section {
 }
 .my_photo {
 	display: inline-block;
-	@include border-radius(50%);
+	border-radius: 50%;
 	background-color: #1a83cd;
 	position: relative;
 	margin: 4px;
@@ -857,7 +810,7 @@ section {
 		right: -5px;
 		bottom: -5px;
 		left: -5px;
-		@include border-radius(50%);
+		border-radius: 50%;
 	}
 	img {
 		display: block;
@@ -870,8 +823,6 @@ section {
 
 .typed-cursor{
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
 @keyframes blink{
@@ -893,6 +844,7 @@ section {
 .skills {
 	&_grid {
 		margin-left: 0;
+		margin-top: 56px;
 		// overflow: hidden;
 		text-align: center;
 		@include flex-flow(row nowrap);
@@ -912,18 +864,18 @@ section {
 			float: left;
 			display:inline-block;
 			@include trs(2s);
-			&:before {
-				content: '';
-				display: block;
-				position: absolute;
-				width: 76%;
-				padding-bottom: 76%;
-				top: 11.9%;
-				left: 13%;
-				border: 2px dotted #b3b3b3;
-				@include border-radius(50%);
-				// background: image-url('dotted_round.png') no-repeat center center;
-			}
+			// &:before {
+			// 	content: '';
+			// 	display: block;
+			// 	position: absolute;
+			// 	width: 76%;
+			// 	padding-bottom: 76%;
+			// 	top: 11.9%;
+			// 	left: 13%;
+			// 	border: 2px dotted #b3b3b3;
+			// 	border-radius: 50%;
+			// 	// background: url('../img/dotted_round.png') no-repeat center center;
+			// }
 		}
 		.grid__item {
 			position: relative;
@@ -933,10 +885,10 @@ section {
 				position: absolute;
 				width: 54%;
 				padding-bottom: 54%;
-				top: 24.3%;
+				top: 24.300000000000001%;
 				left: 24.1%;
 				border: 2px solid #20a3ff;
-				@include border-radius(50%);
+				border-radius: 50%;
 			}
 			&:after {
 				content: '';
@@ -947,7 +899,7 @@ section {
 				top: 15.3%;
 				left: 15%;
 				border: 2px solid #20a3ff;
-				@include border-radius(50%);
+				border-radius: 50%;
 			}
 		}
 	}
@@ -961,6 +913,8 @@ section {
 	}
 	&_percent {}
 }
+
+
 // Portfolio -------------------------------------------------------------------
 .portfolio {
 	.container_center {
@@ -978,7 +932,7 @@ section {
 			position: relative;
 			overflow: hidden;
 			@include trs(.3s);
-			@include border-radius(17px);
+			border-radius: 17px;
 			&:after {
 				content: '';
 				@include trs(.5s);
@@ -995,7 +949,7 @@ section {
 				border-color: #20a3ff;
 				color: white;
 				text-decoration: none;
-				@include border-radius(17px);
+				border-radius: 17px;
 				&:after {
 					width: 100%;
 				}
@@ -1036,7 +990,7 @@ section {
 					&_link {
 						font-size: 16px;
 						&:before {
-							content: image-url('port_link.png');
+							content: url('../img/port_link.png');
 							width: 35px;
 							height: 35px;
 						}
@@ -1092,7 +1046,7 @@ section {
 			font-weight: 700;
 			margin-top: 16px;
 			&:before {
-				content: image-url('port_link.png');
+				content: url('../img/port_link.png');
 				width: 0;
 				height: 0;
 				display: inline-block;
@@ -1103,7 +1057,7 @@ section {
 			&:hover {
 				text-decoration: none;
 				&:before {
-					@include transform(rotate(90deg));
+					transform: rotate(90deg);
 				}
 			}
 		}
@@ -1128,7 +1082,7 @@ section {
 		width: 270px;
 		color: #666;
 		text-transform: uppercase;
-		@include border-radius(0);
+		border-radius: 0;
 		&:hover {
 			background-color: #20a3ff;
 			border-color: #20a3ff;
@@ -1269,7 +1223,7 @@ section {
 	&_title {
 		color: #1a83cd;
 		font-weight: 600;
-		font-size: 50px;
+		font-size: 40px;
 		text-align: center;
 		margin-bottom: 15px;
 	}
@@ -1290,7 +1244,7 @@ section {
 		left: 50%;
 		margin-left: -75px;
 		&:before {
-			content: image-url('plain.png');
+			content: url('../img/plain.png');
 			position: absolute;
 			left: 13px;
 			top: 10px;
@@ -1369,7 +1323,7 @@ section {
 .loader {
 	text-align: center;
 	&:before {
-		// content: image-url('loader.gif');
+		// content: url('../img/loader.gif');
 		// display: inline-block;
 	}
 }
@@ -1480,7 +1434,7 @@ section {
 // Contact ---------------------------------------------------------------------
 .contact {
 	color: #fff;
-	background: image-url('contact_bg.jpg') no-repeat center center;
+	background: url('../img/contact_bg.jpg') no-repeat center center;
 	background-size: cover;
 	background-attachment: fixed;
 	.container_center {
@@ -1507,7 +1461,7 @@ section {
 			&:hover {
 				text-decoration: none;
 				&:before {
-					@include transform(rotateY(180deg));				 	
+					transform: rotateY(180deg);
 				}
 			}
 		}
@@ -1515,7 +1469,7 @@ section {
 }
 .icon_mail {
 	&:before {
-		content: image-url('mail.png');
+		content: url('../img/mail.png');
 		display: inline-block;
 		margin-right: 15px;
 		vertical-align: middle;
@@ -1523,7 +1477,7 @@ section {
 }
 .icon_skype {
 	&:before {
-		content: image-url('skype.png');
+		content: url('../img/skype.png');
 		display: inline-block;
 		margin-right: 15px;
 		vertical-align: middle;
