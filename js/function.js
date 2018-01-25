@@ -147,14 +147,14 @@ $(document).ready(function() {
 
 
 		if (filterLink != 'all') {
-			filterItem.addClass('hidden').removeClass('visiblity');
+			filterItem.addClass('hidden flipOutX').removeClass('visiblity flipInX');
 			filterItem.each(function(index, el) {
 				if ($(this).hasClass(filterLink)) {
-					$(this).removeClass('hidden').addClass('visiblity');
+					$(this).removeClass('hidden flipOutX').addClass('visiblity flipInX');
 				}
 			});
 		} else {
-			filterItem.removeClass('hidden');
+			filterItem.removeClass('hidden flipOutX');
 		}
 
 	});
