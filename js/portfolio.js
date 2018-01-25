@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 function teplateItem(key, value, limit) {
 	var pItem = [
-		'<div class="grid__wrapper animated bounceIn '+value.categori+'">' +
+		'<div class="grid__wrapper animated flipInX '+value.categori+'">' +
 		'<div class="grid__item">' +
 		'<img src="'+value.dir+'/screen.jpg" alt=""/>' +
 		'<div class="portfolio_overlay">' +
