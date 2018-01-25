@@ -247,38 +247,38 @@ $(document).ready(function() {
 	filleUpload();
 
 	if ($(window).width() > 1024) {	
-	    // Init pollifill
-	    $('.bg_canvas').constellation({
-	        star: {
-	            width: 2,
-	            color: 'rgba(255, 255, 255, 0.4)'
-	        },
-	        line: {
-	            color: 'rgba(255, 255, 255, 0.2)'
-	        },
-	        radius: 300
-	    });
+	    // // Init pollifill
+	    // $('.bg_canvas').constellation({
+	    //     star: {
+	    //         width: 2,
+	    //         color: 'rgba(255, 255, 255, 0.4)'
+	    //     },
+	    //     line: {
+	    //         color: 'rgba(255, 255, 255, 0.2)'
+	    //     },
+	    //     radius: 300
+	    // });
 
-	    $('.technology .bg_canvas').constellation({
-	        star: {
-	            width: 2,
-	            color: 'rgba(32, 163, 255, 0.3)'
-	        },
-	        line: {
-	            color: 'rgba(32, 163, 255, 0.1)'
-	        },
-	        radius: 100
-	    })
+	    // $('.technology .bg_canvas').constellation({
+	    //     star: {
+	    //         width: 2,
+	    //         color: 'rgba(32, 163, 255, 0.3)'
+	    //     },
+	    //     line: {
+	    //         color: 'rgba(32, 163, 255, 0.1)'
+	    //     },
+	    //     radius: 100
+	    // })
 
-	    // Title animation
-	    $(".first_screen_title span").textAnimation({
-	        mode: "highlight",
-	        baseColor: "#ffffff",
-	        highlightColor: "rgb(26,131,205, 0.3)",
-	        delay: 35,
-	        interval: 7000,
-	        duration: 50
-	    });  	
+	    // // Title animation
+	    // $(".first_screen_title span").textAnimation({
+	    //     mode: "highlight",
+	    //     baseColor: "#ffffff",
+	    //     highlightColor: "rgb(26,131,205, 0.3)",
+	    //     delay: 35,
+	    //     interval: 7000,
+	    //     duration: 50
+	    // });  	
 
 	} else {
 		$('.bg_canvas').hide();
