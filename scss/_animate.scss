@@ -3338,3 +3338,12 @@
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+.hide {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+

@@ -159,9 +159,30 @@ $(document).ready(function() {
 
 	});
 
+	$('.slideLeft').addClass('hide');
+	$('.slideRight').addClass('hide');
+	$('.slideUp').addClass('hide');
+
+    $('.slideUp').addClass("hide").viewportChecker({
+        classToAdd: 'visible animated fadeInUp',
+        offset: 100
+    });
+
+    $('.slideLeft').addClass("hide").viewportChecker({
+        classToAdd: 'visible animated fadeInLeft',
+        offset: 100
+    });
+
+    $('.slideRight').addClass("hide").viewportChecker({
+        classToAdd: 'visible animated fadeInRight',
+        offset: 100
+    });
+
 	// Run plugins after scrioll to element 
 	$('.about_title').viewportChecker({
 		callbackFunction: function () {
+			$('.my_photo').addClass('animated fadeInRight');
+			$('.about_title').addClass('animated fadeInLeft');
 			$('.about_title').typed({
 		        strings: ["^500 Здравствуйте!"],
 		        typeSpeed: 1,
@@ -173,9 +194,11 @@ $(document).ready(function() {
 		        },
 		    });
 
+			$(".about_text").addClass('animated fadeInLeft');
+
 			$(".about_text span").typed({
 		        strings: ["^1500 Меня зовут Евгений, ^50 я профессиональный HTML-верстальщик. <br/>^50 Занимаюсь вёрсткой сайтов с 2010 года, <br/>^50  для меня это не просто хобби, а основной заработок и поэтому к работе отношусь серьезно и с большой ответственностью."],
-		        typeSpeed: -100,
+		        typeSpeed: 1,
 		        preStringTyped: function() {
 		        	audioPlay();
 		        },
@@ -189,31 +212,16 @@ $(document).ready(function() {
 
 	$('.skills_grid').viewportChecker({
 		callbackFunction: function () {
+			// $(this).addClass('animated slideInUp')
 			setTimeout(function() {
 				diag('html_chart');
 				diag('css_chart');
 				diag('jq_chart');
 				diag('js_chart');
-				$('#about .section_title').addClass('open');
+				$('#about .section_title').addClass('open animated slideInUp');
 
-				$('.skills_grid').addClass('open');
-				// Circleful.js
-				// $('#skill_html').circliful({
-				// 	percent: 95,
-				// });
-
-				// $('#skill_css').circliful({
-				// 	percent: 95,
-				// });
-
-				// $('#skill_jquery').circliful({
-				// 	percent: 90,
-				// });
-
-				// $('#skill_js').circliful({
-				// 	percent: 60,
-				// });
-			}, 6000);
+				$('.skills_grid').addClass('open animated slideInUp');
+			}, 7000);
 		}
 	});
 
