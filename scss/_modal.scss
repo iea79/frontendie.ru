@@ -32,31 +32,31 @@
             top: 50%;
         }
         &:before {
-            @include transform(rotate(45deg));
+            transform: rotate(45deg);
             @include trs(.3s);
         }
         &:after {
-            @include transform(rotate(-45deg));
+            transform: rotate(-45deg);
             @include trs(.7s);
         }
         &:hover {
             opacity: .8;
             color: #040404;
-            @include transform(rotate(180deg));
+            transform: rotate(180deg);
             &:before {
-                @include transform(rotate(135deg));
+                transform: rotate(135deg);
             }
             &:after {
-                @include transform(rotate(45deg));
+                transform: rotate(45deg);
             }
         }
     }
     &.fade .modal-dialog {
-        @include transform(translate(0,-25%));
-        @include transition(transform .3s ease-out);
+        transform: translate(0,-25%);
+        transition: transform .3s ease-out;
     }
     &.in .modal-dialog {
-        @include transform(translate(0,0));
+        transform: translate(0,0);
         position: relative;
     }
     &-dialog {
@@ -74,8 +74,8 @@
         outline: 0;
         margin: 31px auto;
         max-width: 900px;
-        @include border-radius(6px);
-        @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+        border-radius: 6px;
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
         @extend %clear_a;
     }
 
