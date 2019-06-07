@@ -17,7 +17,7 @@ if ('flex' in document.documentElement.style) {
 	// Хак для UCBrowser
 	if (navigator.userAgent.search(/UCBrowser/) > -1) {
 		document.documentElement.setAttribute('data-browser', 'not-flex');
-	} else {		
+	} else {
 	    // Flexbox-совместимый браузер.
 		document.documentElement.setAttribute('data-browser', 'flexible');
 	}
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 	// Stiky menu
     var HeaderTop = $('#header').offset().top + $(window).height() - 51;
-    
+
     $(window).scroll(function(){
         if( $(window).scrollTop() > HeaderTop ) {
         	$('#header').addClass('stiky');
@@ -63,25 +63,25 @@ $(document).ready(function() {
 	var menu_selector = "#header";
 
     $(document).on("scroll", onScroll);
- 
-    $("#header a").click(function(e){
+
+    $("[data-scroll]").click(function(e){
         e.preventDefault();
- 
+
         $(document).off("scroll");
         $(menu_selector + " a").removeClass("active");
         $(this).addClass("active");
         var hash = $(this).attr("href");
         var target = $(hash);
- 
+
         $("html, body").animate({
             scrollTop: target.offset().top -49
         }, 500, function(){
             window.location.hash = hash;
             $(document).on("scroll", onScroll);
         });
- 
+
     });
-	
+
 	function onScroll(){
 	    var scroll_top = $(document).scrollTop();
 	    $(menu_selector + " a").each(function(){
@@ -96,40 +96,40 @@ $(document).ready(function() {
 	    });
 	}
 
-	// First screen scroller 
+	// First screen scroller
     var isAnimating  = false;
 	var lastScrollTop = 0;
 
-	$(window).scroll(function(event){
-		var st = $(this).scrollTop();
-        // e.preventDefault();
-        // e.stopPropagation();
-
-	    var headerTop = $('#first_screen').height();
-	    	nextSection = $('#about').offset().top;
-
-		if( isAnimating ) {
-		   return false;
-		}
-
-		if (st > lastScrollTop){
-		   // downscroll code
-		    isAnimating  = true;
-		    if ($(window).scrollTop() < headerTop) {	    	
-		        $('html, body').animate({ scrollTop: nextSection }, 500, function(){
-		            isAnimating  = false;
-		        });
-		    } else {
-				isAnimating  = false;
-		    }
-
-		} else {
-			isAnimating  = false;
-		}
-
-		lastScrollTop = st;
-
-	});
+	// $(window).scroll(function(event){
+	// 	var st = $(this).scrollTop();
+    //     // e.preventDefault();
+    //     // e.stopPropagation();
+    //
+	//     var headerTop = $('#first_screen').height();
+	//     	nextSection = $('#about').offset().top;
+    //
+	// 	if( isAnimating ) {
+	// 	   return false;
+	// 	}
+    //
+	// 	if (st > lastScrollTop){
+	// 	   // downscroll code
+	// 	    isAnimating  = true;
+	// 	    if ($(window).scrollTop() < headerTop) {
+	// 	        $('html, body').animate({ scrollTop: nextSection }, 500, function(){
+	// 	            isAnimating  = false;
+	// 	        });
+	// 	    } else {
+	// 			isAnimating  = false;
+	// 	    }
+    //
+	// 	} else {
+	// 		isAnimating  = false;
+	// 	}
+    //
+	// 	lastScrollTop = st;
+    //
+	// });
 
 
 	// Portfolio filter
@@ -178,7 +178,7 @@ $(document).ready(function() {
         offset: 100
     });
 
-	// Run plugins after scrioll to element 
+	// Run plugins after scrioll to element
 	$('.about_title').viewportChecker({
 		callbackFunction: function () {
 			$('.my_photo').addClass('animated fadeInRight');
@@ -291,7 +291,7 @@ $(document).ready(function() {
 
 	filleUpload();
 
-	if ($(window).width() > 1024) {	
+	if ($(window).width() > 1024) {
 	    // // Init pollifill
 	    // $('.bg_canvas').constellation({
 	    //     star: {
@@ -323,7 +323,7 @@ $(document).ready(function() {
 	    //     delay: 35,
 	    //     interval: 7000,
 	    //     duration: 50
-	    // });  	
+	    // });
 
 	} else {
 		$('.bg_canvas').hide();
@@ -350,13 +350,13 @@ function diag(el, num){
 	var bgcolor = "#b3b3b3";
 	var text;
 	var animation_loop, redraw_loop;
-	
+
 	function init()
 	{
 
 		//Clear the canvas everytime a chart is drawn
 		ctx.clearRect(0, 0, W, H);
-		
+
 		// Рисуем обводку
 		ctx.fillStyle = "#fff";
 		ctx.strokeStyle = "#b3b3b3";
@@ -377,7 +377,7 @@ function diag(el, num){
 		ctx.moveTo(W/2, H/2);
 		//координаты старта определяем так чтоб закрашенная область всегда была снизу
 		var start=(Math.PI/180)*90-((Math.PI/180)*num*360/100)/2
-		ctx.arc(W/2, H/2, 96, 0 - 90*Math.PI/180, radians - 90*Math.PI/180, false); 
+		ctx.arc(W/2, H/2, 96, 0 - 90*Math.PI/180, radians - 90*Math.PI/180, false);
 		ctx.closePath();
 		ctx.fill();
 
@@ -391,7 +391,7 @@ function diag(el, num){
 		ctx.closePath();
 		ctx.stroke();
 		ctx.fill();
-		
+
 		//Lets add the text
 		ctx.fillStyle = color;
 		ctx.font = "22pt Arial";
@@ -411,12 +411,12 @@ function diag(el, num){
 
 
 	}
-	
+
 	function draw()
 	{
 		//Cancel any movement animation if a new chart is requested
 		if(typeof animation_loop != undefined) clearInterval(animation_loop);
-		
+
 		//random degree from 0 to 360
 		new_degrees = Math.round(percent*3.61);
 		difference = new_degrees - degrees;
@@ -425,26 +425,26 @@ function diag(el, num){
 		//time for each frame is 1sec / difference in degrees
 		animation_loop = setInterval(animate_to, 10);
 	}
-	
+
 	//function to make the chart move to new degrees
 	function animate_to()
 	{
 		//clear animation loop if degrees reaches to new_degrees
-		if(degrees == new_degrees) 
+		if(degrees == new_degrees)
 			clearInterval(animation_loop);
-		
+
 		if(degrees < new_degrees)
 			degrees++;
 		else
 			degrees--;
-			
+
 		init();
 	}
-	
+
 	//Lets add some animation for fun
 	draw();
 	// redraw_loop = setInterval(draw, 2000); //Draw a new chart every 2 seconds
-	
+
 }
 
 

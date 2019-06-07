@@ -6,8 +6,8 @@
 //  Skype: ivanov_ea
 //  ==========================
  */
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic';
-.grid:after, .footer:after, .modal-content:after, .modal-header:after, .modal-body:after, .modal-footer:after, .nav-tabs:after, .form__row:after, .row:after, .header:after, .portfolio_filter:after, .file_upload:after {
+.grid:after, .footer:after, .modal-content:after, .modal-header:after, .modal-body:after, .modal-footer:after, .nav-tabs:after, .form__row:after,
+.row:after, .header:after, .portfolio_filter:after, .file_upload:after {
   content: '';
   display: table;
   clear: both; }
@@ -16,6 +16,362 @@
   content: '';
   display: table;
   clear: both; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?816vfh");
+  src: url("../fonts/icomoon.eot?816vfh#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?816vfh") format("truetype"), url("../fonts/icomoon.woff?816vfh") format("woff"), url("../fonts/icomoon.svg?816vfh#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-mail:before {
+  content: "\e900"; }
+
+.icon-home:before {
+  content: "\e902"; }
+
+.icon-newspaper:before {
+  content: "\e904"; }
+
+.icon-pencil:before {
+  content: "\e905"; }
+
+.icon-image:before {
+  content: "\e90d"; }
+
+.icon-play:before {
+  content: "\e912"; }
+
+.icon-books:before {
+  content: "\e920"; }
+
+.icon-file-empty:before {
+  content: "\e924"; }
+
+.icon-file-text:before {
+  content: "\e926"; }
+
+.icon-file-zip:before {
+  content: "\e92b"; }
+
+.icon-calendar:before {
+  content: "\e953"; }
+
+.icon-display:before {
+  content: "\e956"; }
+
+.icon-mobile:before {
+  content: "\e958"; }
+
+.icon-tablet:before {
+  content: "\e95a"; }
+
+.icon-download:before {
+  content: "\e960"; }
+
+.icon-upload:before {
+  content: "\e961"; }
+
+.icon-undo:before {
+  content: "\e967"; }
+
+.icon-redo:before {
+  content: "\e968"; }
+
+.icon-forward:before {
+  content: "\e969"; }
+
+.icon-reply:before {
+  content: "\e96a"; }
+
+.icon-bubble:before {
+  content: "\e96b"; }
+
+.icon-quotes-left:before {
+  content: "\e977"; }
+
+.icon-quotes-right:before {
+  content: "\e978"; }
+
+.icon-spinner2:before {
+  content: "\e97b"; }
+
+.icon-spinner4:before {
+  content: "\e97d"; }
+
+.icon-spinner5:before {
+  content: "\e97e"; }
+
+.icon-spinner8:before {
+  content: "\e981"; }
+
+.icon-spinner9:before {
+  content: "\e982"; }
+
+.icon-spinner10:before {
+  content: "\e983"; }
+
+.icon-search:before {
+  content: "\e986"; }
+
+.icon-zoom-in:before {
+  content: "\e987"; }
+
+.icon-zoom-out:before {
+  content: "\e988"; }
+
+.icon-lock:before {
+  content: "\e98f"; }
+
+.icon-unlocked:before {
+  content: "\e990"; }
+
+.icon-equalizer:before {
+  content: "\e992"; }
+
+.icon-equalizer2:before {
+  content: "\e993"; }
+
+.icon-cog:before {
+  content: "\e994"; }
+
+.icon-gift:before {
+  content: "\e99f"; }
+
+.icon-menu:before {
+  content: "\e9bd"; }
+
+.icon-menu3:before {
+  content: "\e9bf"; }
+
+.icon-menu4:before {
+  content: "\e9c0"; }
+
+.icon-link:before {
+  content: "\e9cb"; }
+
+.icon-attachment:before {
+  content: "\e9cd"; }
+
+.icon-star-empty:before {
+  content: "\e9d7"; }
+
+.icon-star-half:before {
+  content: "\e9d8"; }
+
+.icon-star-full:before {
+  content: "\e9d9"; }
+
+.icon-heart:before {
+  content: "\e9da"; }
+
+.icon-warning:before {
+  content: "\ea07"; }
+
+.icon-notification:before {
+  content: "\ea08"; }
+
+.icon-question:before {
+  content: "\ea09"; }
+
+.icon-info:before {
+  content: "\ea0c"; }
+
+.icon-cancel-circle:before {
+  content: "\ea0d"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
+
+.icon-checkmark:before {
+  content: "\ea10"; }
+
+.icon-circle-up:before {
+  content: "\ea41"; }
+
+.icon-circle-right:before {
+  content: "\ea42"; }
+
+.icon-circle-down:before {
+  content: "\ea43"; }
+
+.icon-circle-left:before {
+  content: "\ea44"; }
+
+.icon-sort-amount-asc:before {
+  content: "\ea4c"; }
+
+.icon-sort-amount-desc:before {
+  content: "\ea4d"; }
+
+.icon-facebook2:before {
+  content: "\ea91"; }
+
+.icon-instagram:before {
+  content: "\ea92"; }
+
+.icon-whatsapp:before {
+  content: "\ea93"; }
+
+.icon-telegram:before {
+  content: "\ea95"; }
+
+.icon-twitter:before {
+  content: "\ea96"; }
+
+.icon-vk:before {
+  content: "\ea98"; }
+
+.icon-youtube:before {
+  content: "\ea9d"; }
+
+.icon-twitch:before {
+  content: "\ea9f"; }
+
+.icon-behance:before {
+  content: "\eaa8"; }
+
+.icon-behance2:before {
+  content: "\eaa9"; }
+
+.icon-steam:before {
+  content: "\eaac"; }
+
+.icon-steam2:before {
+  content: "\eaad"; }
+
+.icon-dropbox:before {
+  content: "\eaae"; }
+
+.icon-github:before {
+  content: "\eab0"; }
+
+.icon-npm:before {
+  content: "\eab1"; }
+
+.icon-trello:before {
+  content: "\eab3"; }
+
+.icon-joomla:before {
+  content: "\eab5"; }
+
+.icon-tumblr2:before {
+  content: "\eaba"; }
+
+.icon-tux:before {
+  content: "\eabd"; }
+
+.icon-appleinc:before {
+  content: "\eabe"; }
+
+.icon-finder:before {
+  content: "\eabf"; }
+
+.icon-android:before {
+  content: "\eac0"; }
+
+.icon-windows8:before {
+  content: "\eac2"; }
+
+.icon-skype:before {
+  content: "\eac5"; }
+
+.icon-hackernews:before {
+  content: "\eac7"; }
+
+.icon-wikipedia:before {
+  content: "\eac8"; }
+
+.icon-linkedin:before {
+  content: "\eac9"; }
+
+.icon-pinterest:before {
+  content: "\ead1"; }
+
+.icon-pinterest2:before {
+  content: "\ead2"; }
+
+.icon-paypal:before {
+  content: "\ead8"; }
+
+.icon-chrome:before {
+  content: "\ead9"; }
+
+.icon-firefox:before {
+  content: "\eada"; }
+
+.icon-IE:before {
+  content: "\eadb"; }
+
+.icon-edge:before {
+  content: "\eadc"; }
+
+.icon-safari:before {
+  content: "\eadd"; }
+
+.icon-opera:before {
+  content: "\eade"; }
+
+.icon-html-five:before {
+  content: "\eae4"; }
+
+.icon-html-five2:before {
+  content: "\eae5"; }
+
+.icon-css3:before {
+  content: "\eae6"; }
+
+.icon-git:before {
+  content: "\eae7"; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-SemiBold.eot");
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("../fonts/OpenSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype"), url("../fonts/OpenSans-SemiBold.svg#OpenSans-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-Regular.eot");
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype"), url("../fonts/OpenSans-Regular.svg#OpenSans-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-Light.eot");
+  src: local("Open Sans Light"), local("OpenSans-Light"), url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.ttf") format("truetype"), url("../fonts/OpenSans-Light.svg#OpenSans-Light") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-ExtraBold.eot");
+  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"), url("../fonts/OpenSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2"), url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.ttf") format("truetype"), url("../fonts/OpenSans-ExtraBold.svg#OpenSans-ExtraBold") format("svg");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-Bold.eot");
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("../fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
 
 .navbar__link, .review_slider_name a, .footer a {
   display: inline-block; }
@@ -2584,7 +2940,8 @@
 .fl__right {
   float: right; }
 
-.form__row + *, .row + * {
+.form__row + *,
+.row + * {
   margin-top: 15px; }
 
 * {
@@ -2592,24 +2949,42 @@
   padding: 0;
   box-sizing: border-box; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block; }
 
-html, body, .wrapper {
+.wrapper,
+body,
+html {
   height: 100%;
   position: relative;
   box-sizing: content-box; }
 
 body {
-  font: 16px Open Sans, sans-serif;
+  font: 16px "Open Sans", sans-serif;
   line-height: 1.2;
   font-weight: 300;
   color: #666; }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 300; }
 
-input, textarea {
+input,
+textarea {
   outline: 0; }
 
 a {
@@ -2622,7 +2997,8 @@ a {
   a:focus {
     outline: 0; }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -2662,7 +3038,7 @@ img {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -50px auto;
+  margin: 0 auto -50px;
   padding-bottom: 50px; }
 
 .container_center {
@@ -2672,136 +3048,136 @@ img {
   margin-right: auto; }
 
 input:not([type]),
-input[type=text],
-input[type=password],
+input[type=datetime],
 input[type=email],
-input[type=url],
+input[type=number],
+input[type=password],
 input[type=search],
 input[type=tel],
-input[type=number],
-input[type=datetime],
+input[type=text],
+input[type=url],
 textarea {
   background-color: white;
   padding: 6px 15px;
   outline: none;
   font-size: 16px;
   font-weight: 300;
-  font-family: Open Sans, sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: none;
   border-bottom: 1px solid #ccc; }
   input:not([type]):focus::-webkit-input-placeholder,
-  input[type=text]:focus::-webkit-input-placeholder,
-  input[type=password]:focus::-webkit-input-placeholder,
+  input[type=datetime]:focus::-webkit-input-placeholder,
   input[type=email]:focus::-webkit-input-placeholder,
-  input[type=url]:focus::-webkit-input-placeholder,
+  input[type=number]:focus::-webkit-input-placeholder,
+  input[type=password]:focus::-webkit-input-placeholder,
   input[type=search]:focus::-webkit-input-placeholder,
   input[type=tel]:focus::-webkit-input-placeholder,
-  input[type=number]:focus::-webkit-input-placeholder,
-  input[type=datetime]:focus::-webkit-input-placeholder,
+  input[type=text]:focus::-webkit-input-placeholder,
+  input[type=url]:focus::-webkit-input-placeholder,
   textarea:focus::-webkit-input-placeholder {
     color: red;
     text-indent: -300px; }
   input:not([type]):focus:-moz-placeholder,
-  input[type=text]:focus:-moz-placeholder,
-  input[type=password]:focus:-moz-placeholder,
+  input[type=datetime]:focus:-moz-placeholder,
   input[type=email]:focus:-moz-placeholder,
-  input[type=url]:focus:-moz-placeholder,
+  input[type=number]:focus:-moz-placeholder,
+  input[type=password]:focus:-moz-placeholder,
   input[type=search]:focus:-moz-placeholder,
   input[type=tel]:focus:-moz-placeholder,
-  input[type=number]:focus:-moz-placeholder,
-  input[type=datetime]:focus:-moz-placeholder,
+  input[type=text]:focus:-moz-placeholder,
+  input[type=url]:focus:-moz-placeholder,
   textarea:focus:-moz-placeholder {
     color: red;
     text-indent: -300px; }
   input:not([type]):focus::-moz-placeholder,
-  input[type=text]:focus::-moz-placeholder,
-  input[type=password]:focus::-moz-placeholder,
+  input[type=datetime]:focus::-moz-placeholder,
   input[type=email]:focus::-moz-placeholder,
-  input[type=url]:focus::-moz-placeholder,
+  input[type=number]:focus::-moz-placeholder,
+  input[type=password]:focus::-moz-placeholder,
   input[type=search]:focus::-moz-placeholder,
   input[type=tel]:focus::-moz-placeholder,
-  input[type=number]:focus::-moz-placeholder,
-  input[type=datetime]:focus::-moz-placeholder,
+  input[type=text]:focus::-moz-placeholder,
+  input[type=url]:focus::-moz-placeholder,
   textarea:focus::-moz-placeholder {
     color: red;
     text-indent: -300px; }
   input:not([type]):focus:-ms-input-placeholder,
-  input[type=text]:focus:-ms-input-placeholder,
-  input[type=password]:focus:-ms-input-placeholder,
+  input[type=datetime]:focus:-ms-input-placeholder,
   input[type=email]:focus:-ms-input-placeholder,
-  input[type=url]:focus:-ms-input-placeholder,
+  input[type=number]:focus:-ms-input-placeholder,
+  input[type=password]:focus:-ms-input-placeholder,
   input[type=search]:focus:-ms-input-placeholder,
   input[type=tel]:focus:-ms-input-placeholder,
-  input[type=number]:focus:-ms-input-placeholder,
-  input[type=datetime]:focus:-ms-input-placeholder,
+  input[type=text]:focus:-ms-input-placeholder,
+  input[type=url]:focus:-ms-input-placeholder,
   textarea:focus:-ms-input-placeholder {
     color: red;
     text-indent: -300px; }
-  input:not([type]).input_error,
-  input[type=text].input_error,
-  input[type=password].input_error,
-  input[type=email].input_error,
-  input[type=url].input_error,
-  input[type=search].input_error,
-  input[type=tel].input_error,
-  input[type=number].input_error,
-  input[type=datetime].input_error,
-  textarea.input_error {
+  input:not([type]).invalid,
+  input[type=datetime].invalid,
+  input[type=email].invalid,
+  input[type=number].invalid,
+  input[type=password].invalid,
+  input[type=search].invalid,
+  input[type=tel].invalid,
+  input[type=text].invalid,
+  input[type=url].invalid,
+  textarea.invalid {
     background-color: #fff0f0;
     border: 1px solid red; }
   input:not([type])::-webkit-input-placeholder,
-  input[type=text]::-webkit-input-placeholder,
-  input[type=password]::-webkit-input-placeholder,
+  input[type=datetime]::-webkit-input-placeholder,
   input[type=email]::-webkit-input-placeholder,
-  input[type=url]::-webkit-input-placeholder,
+  input[type=number]::-webkit-input-placeholder,
+  input[type=password]::-webkit-input-placeholder,
   input[type=search]::-webkit-input-placeholder,
   input[type=tel]::-webkit-input-placeholder,
-  input[type=number]::-webkit-input-placeholder,
-  input[type=datetime]::-webkit-input-placeholder,
+  input[type=text]::-webkit-input-placeholder,
+  input[type=url]::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     color: #b3b3b3;
     text-indent: 0; }
   input:not([type]):-moz-placeholder,
-  input[type=text]:-moz-placeholder,
-  input[type=password]:-moz-placeholder,
+  input[type=datetime]:-moz-placeholder,
   input[type=email]:-moz-placeholder,
-  input[type=url]:-moz-placeholder,
+  input[type=number]:-moz-placeholder,
+  input[type=password]:-moz-placeholder,
   input[type=search]:-moz-placeholder,
   input[type=tel]:-moz-placeholder,
-  input[type=number]:-moz-placeholder,
-  input[type=datetime]:-moz-placeholder,
+  input[type=text]:-moz-placeholder,
+  input[type=url]:-moz-placeholder,
   textarea:-moz-placeholder {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     color: #b3b3b3;
     text-indent: 0; }
   input:not([type])::-moz-placeholder,
-  input[type=text]::-moz-placeholder,
-  input[type=password]::-moz-placeholder,
+  input[type=datetime]::-moz-placeholder,
   input[type=email]::-moz-placeholder,
-  input[type=url]::-moz-placeholder,
+  input[type=number]::-moz-placeholder,
+  input[type=password]::-moz-placeholder,
   input[type=search]::-moz-placeholder,
   input[type=tel]::-moz-placeholder,
-  input[type=number]::-moz-placeholder,
-  input[type=datetime]::-moz-placeholder,
+  input[type=text]::-moz-placeholder,
+  input[type=url]::-moz-placeholder,
   textarea::-moz-placeholder {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     color: #b3b3b3;
     text-indent: 0; }
   input:not([type]):-ms-input-placeholder,
-  input[type=text]:-ms-input-placeholder,
-  input[type=password]:-ms-input-placeholder,
+  input[type=datetime]:-ms-input-placeholder,
   input[type=email]:-ms-input-placeholder,
-  input[type=url]:-ms-input-placeholder,
+  input[type=number]:-ms-input-placeholder,
+  input[type=password]:-ms-input-placeholder,
   input[type=search]:-ms-input-placeholder,
   input[type=tel]:-ms-input-placeholder,
-  input[type=number]:-ms-input-placeholder,
-  input[type=datetime]:-ms-input-placeholder,
+  input[type=text]:-ms-input-placeholder,
+  input[type=url]:-ms-input-placeholder,
   textarea:-ms-input-placeholder {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -2945,7 +3321,7 @@ input[type=checkbox]:disabled:indeterminate:before {
 
 .btn {
   color: #000;
-  font-family: Open Sans, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 300;
   padding: 5px 15px 7px;
@@ -3006,7 +3382,7 @@ input[type=checkbox]:disabled:indeterminate:before {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     .soc a:hover {
-      opacity: .8; }
+      opacity: 0.8; }
     .soc a:before {
       content: 'soc';
       color: #fff;
@@ -3087,7 +3463,7 @@ section {
       margin: 0 15px; }
     .stiky .navbar__link {
       color: #4d4d4d; }
-      .stiky .navbar__link:hover, .stiky .navbar__link.active {
+      .stiky .navbar__link.active, .stiky .navbar__link:hover {
         color: #20a3ff;
         text-decoration: none; }
 
@@ -3353,12 +3729,12 @@ section {
       width: 0;
       z-index: -1;
       background-color: #20a3ff; }
-    .portfolio_filter_link:hover, .portfolio_filter_link.active {
+    .portfolio_filter_link.active, .portfolio_filter_link:hover {
       border-color: #20a3ff;
       color: white;
       text-decoration: none;
       border-radius: 17px; }
-      .portfolio_filter_link:hover:after, .portfolio_filter_link.active:after {
+      .portfolio_filter_link.active:after, .portfolio_filter_link:hover:after {
         width: 100%; }
 
 .portfolio_grid .grid__wrapper {
@@ -3397,7 +3773,7 @@ section {
     .portfolio_grid .grid__item:hover .portfolio_overlay_text {
       font-size: 14px; }
   .portfolio_grid .grid__item:hover img {
-    opacity: .8; }
+    opacity: 0.8; }
   .portfolio_grid .grid__item > * {
     position: absolute; }
   .portfolio_grid .grid__item img {
@@ -3427,7 +3803,7 @@ section {
       vertical-align: middle; }
   .portfolio_overlay_title {
     color: white;
-    font-size: 0px;
+    font-size: 0;
     margin-bottom: 5px;
     -webkit-transition: all 0.5s;
     transition: all 0.5s; }
@@ -3649,7 +4025,7 @@ section {
     opacity: 0;
     left: 0;
     top: 0;
-    height: 0%;
+    height: 0;
     z-index: -1; }
 
 .loader {
@@ -3666,7 +4042,7 @@ section {
     content: "";
     position: absolute;
     background-color: #1a83cd;
-    top: 0px;
+    top: 0;
     left: 48%;
     height: 9px;
     width: 1px;
@@ -3778,8 +4154,13 @@ section {
   .contact .contact_links a {
     color: #fff;
     font-size: 18px;
-    margin-right: 5%; }
+    margin-right: 5%;
+    font-family: 'Open Sans' !important;
+    font-weight: 300; }
     .contact .contact_links a:before {
+      color: #20a3ff;
+      font-family: icomoon !important;
+      margin-right: 10px;
       -webkit-transition: all 0.5s;
       transition: all 0.5s; }
     .contact .contact_links a:hover {
@@ -3818,6 +4199,3 @@ section {
     text-align: center;
     padding-left: 20px;
     padding-right: 20px; }
-
-/* Responsive styles
------------------------------------------------------------------------------ */
